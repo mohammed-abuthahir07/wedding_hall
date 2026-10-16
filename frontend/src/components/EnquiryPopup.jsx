@@ -110,20 +110,17 @@ export const EnquiryPopup = ({ isOpen, onClose }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  
+const handleSubmit = (e) => {
+  e.preventDefault();
 
-    if (!validate()) {
-      return;
-    }
+  if (!validate()) return;
 
-    const trimmedName = formData.name.trim();
-    const cleanPhone = formData.phone.trim().replace(/[\s-]/g, '');
-    const guestsCount = formData.guests.trim();
+  const trimmedName = formData.name.trim();
+  const cleanPhone = formData.phone.trim().replace(/[\s-]/g, '');
+  const guestsCount = String(formData.guests).trim();
 
-    // Construct Tamil Message
-    const tamilMessage = 
-`வணக்கம்! சமூகப் பணிமன்றம் திருமண மண்டபம் முன்பதிவு பற்றிய தகவல் தேவை.
+  const tamilMessage = `வணக்கம்! சமூகப் பணிமன்றம் திருமண மண்டபம் முன்பதிவு பற்றிய தகவல் தேவை.
 
 • மண்டபத்தின் பெயர்: சமூகப் பணிமன்றம் (ஞானஒலிவுபுரம், மதுரை)
 • பெயர்: ${trimmedName}
@@ -132,16 +129,26 @@ export const EnquiryPopup = ({ isOpen, onClose }) => {
 
 தயவுசெய்து மண்டப முன்பதிவு விவரங்களை தெரிவிக்கவும். நன்றி!`;
 
-    const encodedMessage = encodeURIComponent(tamilMessage);
-    const destinationNumber = '919842191273';
-    const whatsappUrl = `https://wa.me/${destinationNumber}?text=${encodedMessage}`;
+  const destinationNumber = '919842191273';
+  const whatsappUrl =
+    `https://wa.me/${destinationNumber}?text=${encodeURIComponent(tamilMessage)}`;
 
-    setLastWhatsAppUrl(whatsappUrl);
+  setLastWhatsAppUrl(whatsappUrl);
+
+  // Open WhatsApp directly from the submit click
+  const whatsappWindow = window.open(
+    whatsappUrl,
+    '_blank'
+  );
+
+  if (whatsappWindow) {
     setIsSubmitted(true);
+  } else {
+    // If the browser blocks the new tab, show the fallback link
+    setIsSubmitted(true);
+  }
+};
 
-    // Open WhatsApp in new tab
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-  };
 
   if (!isOpen && !isClosing) return null;
 
