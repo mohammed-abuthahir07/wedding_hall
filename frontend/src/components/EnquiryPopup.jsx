@@ -133,7 +133,7 @@ export const EnquiryPopup = ({ isOpen, onClose }) => {
 தயவுசெய்து மண்டப முன்பதிவு விவரங்களை தெரிவிக்கவும். நன்றி!`;
 
     const encodedMessage = encodeURIComponent(tamilMessage);
-    const destinationNumber = '919842191273 ';
+    const destinationNumber = '919842191273';
     const whatsappUrl = `https://wa.me/${destinationNumber}?text=${encodedMessage}`;
 
     setLastWhatsAppUrl(whatsappUrl);
