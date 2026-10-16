@@ -1,0 +1,259 @@
+/* ==========================================================================
+   சமூகப் பணிமன்றம் (Samuga Pani Mandram) — Design System & Global Styles
+   Strict White, Black, and Pink Color Palette
+   ========================================================================== */
+
+:root {
+  /* Main Colors — Light Mode (Default) */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F9FA;
+  --bg-tertiary: #FFF0F6;
+  --text-primary: #171717;
+  --text-secondary: #495057;
+  --text-muted: #6C757D;
+  --accent-pink: #E64980;
+  --accent-pink-hover: #D6336C;
+  --accent-pink-active: #C2255C;
+  --accent-pink-subtle: #FDF2F8;
+  --accent-pink-border: #FCC2D7;
+  --accent-gold: #F59E0B;
+  --border-color: #E9ECEF;
+  --border-subtle: #DEE2E6;
+  --border-hover: #CED4DA;
+  --card-bg: #FFFFFF;
+  --card-hover-bg: #FFFFFF;
+  --nav-bg: rgba(255, 255, 255, 0.94);
+  --dialog-bg: #FFFFFF;
+  --overlay-bg: rgba(0, 0, 0, 0.65);
+  --input-bg: #FFFFFF;
+  --input-border: #CED4DA;
+  --input-text: #171717;
+  --input-placeholder: #868E96;
+  --error-color: #E03131;
+  --error-bg: #FFF5F5;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 18px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --shadow-pink: 0 8px 24px rgba(230, 73, 128, 0.28);
+
+  /* Layout & Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.28s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Typography */
+  --font-family: 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Latha', 'Vijaya', sans-serif;
+  --line-height-tamil: 1.7;
+}
+
+/* Dark Mode Theme */
+[data-theme="dark"] {
+  --bg-primary: #121214;
+  --bg-secondary: #18181C;
+  --bg-tertiary: #251622;
+  --text-primary: #F8F9FA;
+  --text-secondary: #CED4DA;
+  --text-muted: #868E96;
+  --accent-pink: #FF6B99;
+  --accent-pink-hover: #E64980;
+  --accent-pink-active: #D6336C;
+  --accent-pink-subtle: #2E1524;
+  --accent-pink-border: #6B2144;
+  --accent-gold: #FBBF24;
+  --border-color: #2D2D36;
+  --border-subtle: #3A3A46;
+  --border-hover: #484858;
+  --card-bg: #1A1A20;
+  --card-hover-bg: #22222A;
+  --nav-bg: rgba(18, 18, 20, 0.94);
+  --dialog-bg: #1A1A20;
+  --overlay-bg: rgba(0, 0, 0, 0.85);
+  --input-bg: #22222A;
+  --input-border: #3A3A48;
+  --input-text: #F8F9FA;
+  --input-placeholder: #868E96;
+  --error-color: #FF8787;
+  --error-bg: #2C1618;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 18px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.65);
+  --shadow-pink: 0 8px 24px rgba(255, 107, 153, 0.3);
+}
+
+/* ==========================================================================
+   CSS Reset & Base Rules
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: var(--line-height-tamil);
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Focus styles for keyboard navigation accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--accent-pink);
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   Typography Helpers
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: var(--line-height-tamil);
+}
+
+/* ==========================================================================
+   Shared Section Layouts
+   ========================================================================== */
+
+.section-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 48px;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background-color: var(--accent-pink-subtle);
+  border: 1px solid var(--accent-pink-border);
+  color: var(--accent-pink);
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.section-title-divider {
+  width: 70px;
+  height: 4px;
+  background: var(--accent-pink);
+  margin: 0 auto 18px auto;
+  border-radius: var(--radius-full);
+}
+
+.section-description {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Reduced Motion Preferences
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
