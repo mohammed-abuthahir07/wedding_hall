@@ -17,7 +17,7 @@ export const HeroSection = ({ onOpenEnquiry }) => {
         {/* Top Pill Badge */}
         <div className="hero-pill-badge hero-reveal-item delay-1">
           <KalasamIcon size={18} className="hero-badge-icon" />
-          <span>மதுரை யானவொலிபுரம் • திருமண மண்டபம்</span>
+          <span>மதுரை ஞானஒலிவுபுரம் • திருமண மண்டபம்</span>
         </div>
 
         {/* Main Heading */}
