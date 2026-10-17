@@ -33,7 +33,7 @@ export const HeroSection = ({ onOpenEnquiry }) => {
 
         {/* Additional Line */}
         <p className="hero-organizer-line hero-reveal-item delay-4">
-          யானவொலிபுரம் சங்கத்தால் நடத்தப்படுகிறது
+          ஞானஒலிவுபுரம் சங்கத்தால் நடத்தப்படுகிறது
         </p>
 
         {/* Primary CTA Button */}
