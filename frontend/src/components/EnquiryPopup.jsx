@@ -85,12 +85,10 @@ export const EnquiryPopup = ({ isOpen, onClose }) => {
       newErrors.name = 'பெயர் குறைந்தபட்சம் 2 எழுத்துக்கள் இருக்க வேண்டும்';
     }
 
-    // 2. Phone validation
-    const trimmedPhone = formData.phone.trim().replace(/[\s-]/g, '');
+    // 2. Phone validation - accepts any phone number format (e.g. +91..., local, mobile)
+    const trimmedPhone = formData.phone.trim();
     if (!trimmedPhone) {
       newErrors.phone = 'தயவுசெய்து உங்கள் தொலைபேசி எண்ணை உள்ளிடவும்';
-    } else if (!/^[6-9]\d{9}$/.test(trimmedPhone)) {
-      newErrors.phone = 'சரியான 10 இலக்க இந்திய தொலைபேசி எண்ணை உள்ளிடவும் (எ.கா: 9876543210)';
     }
 
     // 3. Guests count validation
@@ -257,11 +255,11 @@ const handleSubmit = (e) => {
                 name="phone"
                 type="tel"
                 className={`form-input ${errors.phone ? 'input-error' : ''}`}
-                placeholder="10 இலக்க தொலைபேசி எண் (எ.கா: 9876543210)"
+                placeholder="தொலைபேசி எண் (எ.கா: +91 9876543210)"
                 value={formData.phone}
                 onChange={handleChange}
                 autoComplete="tel"
-                maxLength={14}
+                maxLength={25}
                 aria-required="true"
                 aria-invalid={errors.phone ? 'true' : 'false'}
                 aria-describedby={errors.phone ? 'phone-error-msg' : undefined}
