@@ -40,7 +40,7 @@ export const HeroSection = ({ onOpenEnquiry }) => {
         </p>
 
         <p className="hero-organization hero-reveal-item delay-4">
-          (சமூகப் பணிமன்றம)
+          (சமூகப் பணிமன்றம்)
         </p>
 
         {/* Primary CTA Button */}
