@@ -127,7 +127,7 @@ const handleSubmit = (e) => {
 
 தயவுசெய்து மண்டப முன்பதிவு விவரங்களை தெரிவிக்கவும். நன்றி!`;
 
-  const destinationNumber = '919842191273';
+  const destinationNumber = '918870889819';
   const whatsappUrl =
     `https://wa.me/${destinationNumber}?text=${encodeURIComponent(tamilMessage)}`;
 

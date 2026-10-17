@@ -49,7 +49,7 @@ export const Footer = ({ onOpenEnquiry }) => {
           <div className="footer-contact-column scroll-reveal reveal-right" data-reveal-delay="0.2s">
             <h4 className="footer-column-heading">தொடர்புக்கு</h4>
             <p className="footer-contact-text"><strong>இடம்:</strong> ஞானஒளிவுபுரம், மதுரை</p>
-            <p className="footer-contact-text"><strong>தொலைபேசி:</strong> +91 9842191273</p>
+            <p className="footer-contact-text"><strong>தொலைபேசி:</strong> +91 8870889819</p>
             <p className="footer-contact-text"><strong>நிர்வாகம்:</strong> ஞானஒளிவுபுரம் சங்கம்</p>
             <div className="footer-action-buttons">
               <button type="button" className="footer-enquiry-btn" onClick={onOpenEnquiry}>

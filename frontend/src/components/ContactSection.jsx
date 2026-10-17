@@ -3,8 +3,8 @@ import { PhoneIcon, WhatsAppIcon, MapPinIcon, KalasamIcon, CheckIcon } from './I
 import frontImg from '../assets/img2.jpeg';
 
 export const ContactSection = ({ onOpenEnquiry }) => {
-  const phoneNumber = '9842191273';
-  const whatsappUrl = `https://wa.me/919842191273?text=${encodeURIComponent(
+  const phoneNumber = '8870889819';
+  const whatsappUrl = `https://wa.me/918870889819?text=${encodeURIComponent(
     'வணக்கம்! சமூகப் பணிமன்றம் திருமண மண்டபம் முன்பதிவு மற்றும் விவரங்களை அறிய விரும்புகிறேன்.'
   )}`;
 
@@ -187,7 +187,7 @@ export const ContactSection = ({ onOpenEnquiry }) => {
               },
               {
                 q: 'முன்பதிவு செய்ய என்ன நடைமுறைகளை பின்பற்ற வேண்டும்?',
-                a: 'தொலைபேசி (+91 9842191273) அல்லது WhatsApp மூலம் தொடர்பு கொண்டு உங்கள் தேதி காலியாக உள்ளதா என உறுதி செய்து, நேரில் அல்லது படிவம் மூலம் முன்பதிவு செய்து கொள்ளலாம்.'
+                a: 'தொலைபேசி (+91 8870889819) அல்லது WhatsApp மூலம் தொடர்பு கொண்டு உங்கள் தேதி காலியாக உள்ளதா என உறுதி செய்து, நேரில் அல்லது படிவம் மூலம் முன்பதிவு செய்து கொள்ளலாம்.'
               },
               {
                 q: 'உணவுக்கூடத்தின் வசதிகள் மற்றும் கொள்ளளவு என்ன?',
