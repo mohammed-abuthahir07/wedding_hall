@@ -77,6 +77,8 @@ class CDPClient {
           }
         } else if (msg.method === 'Runtime.consoleAPICalled') {
           this.consoleLogs.push(msg.params);
+        } else if (msg.method === 'Runtime.exceptionThrown') {
+          console.error('JS RUNTIME EXCEPTION:', JSON.stringify(msg.params.exceptionDetails, null, 2));
         } else if (msg.method) {
           this.events.push(msg);
         }

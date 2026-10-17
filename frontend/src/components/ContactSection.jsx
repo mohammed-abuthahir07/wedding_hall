@@ -3,8 +3,8 @@ import { PhoneIcon, WhatsAppIcon, MapPinIcon, KalasamIcon, CheckIcon } from './I
 import frontImg from '../assets/img2.jpeg';
 
 export const ContactSection = ({ onOpenEnquiry }) => {
-  const phoneNumber = '9842191273';
-  const whatsappUrl = `https://wa.me/919842191273?text=${encodeURIComponent(
+  const phoneNumber = '8682096578';
+  const whatsappUrl = `https://wa.me/918682096578?text=${encodeURIComponent(
     'வணக்கம்! சமூகப் பணிமன்றம் திருமண மண்டபம் முன்பதிவு மற்றும் விவரங்களை அறிய விரும்புகிறேன்.'
   )}`;
 
@@ -55,6 +55,13 @@ export const ContactSection = ({ onOpenEnquiry }) => {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            <div className="contact-route-info">
+              <h4 className="contact-route-title">எளிதான அமைவிடம் & வழித்தடம்</h4>
+              <p className="contact-route-desc">
+                மதுரை மாநகரின் யானவொலிபுரத்தில் அமைந்துள்ள எங்கள் திருமண மண்டபத்தை பேருந்து நிலையம் மற்றும் ரயில் நிலையத்திலிருந்து ஆட்டோ, கார் மற்றும் பேருந்து மூலம் மிக எளிதாக வந்தடையலாம்.
+              </p>
             </div>
           </div>
 
@@ -122,6 +129,81 @@ export const ContactSection = ({ onOpenEnquiry }) => {
                 <span className="contact-hours-time">காலை 9:00 – மாலை 6:00</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Nearby Landmark Distances */}
+        <div className="contact-landmarks-wrap scroll-reveal reveal-up" data-reveal-delay="0.15s">
+          <h4 className="contact-landmarks-title">முக்கிய இடங்களிலிருந்து எளிதான அமைவிட தூரம்</h4>
+          <div className="contact-landmarks-grid">
+            {[
+              { place: 'மதுரை சந்திப்பு ரயில் நிலையம்', distance: '~3.0 கி.மீ', time: '10 நிமிடங்கள்' },
+              { place: 'மதுரை பெரியார் பேருந்து நிலையம்', distance: '~3.5 கி.மீ', time: '12 நிமிடங்கள்' },
+              { place: 'மதுரை மீனாட்சி அம்மன் திருக்கோவில்', distance: '~4.0 கி.மீ', time: '15 நிமிடங்கள்' },
+              { place: 'மாட்டுத்தாவணி (MGR) பேருந்து நிலையம்', distance: '~7.5 கி.மீ', time: '20 நிமிடங்கள்' },
+            ].map((landmark, idx) => {
+              const col = idx % 2;
+              const dirClass = col === 0 ? 'reveal-left' : 'reveal-right';
+              return (
+                <div key={landmark.place} className={`contact-landmark-card scroll-reveal ${dirClass}`}>
+                  <div className="landmark-card-icon">
+                    <MapPinIcon size={20} />
+                  </div>
+                  <div className="landmark-card-info">
+                    <h5 className="landmark-place-name">{landmark.place}</h5>
+                    <p className="landmark-distance-text">
+                      <span className="landmark-dist-highlight">{landmark.distance}</span> • சுமார் {landmark.time} பயண நேரம்
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Frequently Asked Questions (FAQ) */}
+        <div className="contact-faq-wrap scroll-reveal reveal-up" data-reveal-delay="0.2s">
+          <div className="section-header text-center">
+            <span className="section-badge">
+              <KalasamIcon size={16} />
+              <span>விளக்கங்கள்</span>
+            </span>
+            <h3 className="section-title">அடிக்கடி கேட்கப்படும் கேள்விகள் (FAQ)</h3>
+            <div className="section-title-divider"></div>
+            <p className="section-description">
+              மண்டப முன்பதிவு மற்றும் வசதிகள் குறித்து வாடிக்கையாளர்கள் பொதுவாக கேட்கும் கேள்விகளுக்கான தெளிவான பதில்கள்
+            </p>
+          </div>
+
+          <div className="contact-faq-grid">
+            {[
+              {
+                q: 'மண்டபத்தை நேரில் வந்து பார்வையிடலாமா?',
+                a: 'ஆம், நிச்சயமாக! திங்கள் முதல் சனி வரை காலை 8:00 மணி முதல் இரவு 9:00 மணி வரையிலும், ஞாயிற்றுக்கிழமைகளில் காலை 9:00 மணி முதல் மாலை 6:00 மணி வரையிலும் நீங்கள் நேரடியாக வந்து மண்டப அரங்கு, மேடை மற்றும் உணவுக்கூடத்தை பார்வையிடலாம்.'
+              },
+              {
+                q: 'எந்தெந்த சுபநிகழ்ச்சிகளுக்கு மண்டபம் முன்பதிவு செய்யப்படுகிறது?',
+                a: 'திருமணம், நிச்சயதார்த்தம், வரவேற்பு, வளைகாப்பு, சதாபிஷேகம், மணிவிழா, பிறந்தநாள் மற்றும் அனைத்து குடும்ப சுப மங்கள வைபவங்களுக்கும் முன்பதிவு செய்யப்படுகிறது.'
+              },
+              {
+                q: 'முன்பதிவு செய்ய என்ன நடைமுறைகளை பின்பற்ற வேண்டும்?',
+                a: 'தொலைபேசி (+91 8682096578) அல்லது WhatsApp மூலம் தொடர்பு கொண்டு உங்கள் தேதி காலியாக உள்ளதா என உறுதி செய்து, நேரில் அல்லது படிவம் மூலம் முன்பதிவு செய்து கொள்ளலாம்.'
+              },
+              {
+                q: 'உணவுக்கூடத்தின் வசதிகள் மற்றும் கொள்ளளவு என்ன?',
+                a: 'சுத்தமான பந்தி முறை உணவு அருந்துவதற்கான தனி விசாலமான சாப்பாட்டுக் கூடம், குடிநீர் வசதி மற்றும் சமையல் பாத்திரங்கள் கழுவும் வசதியுடன் உள்ளது.'
+              }
+            ].map((faq, idx) => {
+              const dirClass = idx % 2 === 0 ? 'reveal-left' : 'reveal-right';
+              return (
+                <div key={faq.q} className={`contact-faq-card scroll-reveal ${dirClass}`}>
+                  <h4 className="contact-faq-question">
+                    <span className="faq-q-mark">கேள்வி:</span> {faq.q}
+                  </h4>
+                  <p className="contact-faq-answer">{faq.a}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
 

@@ -129,6 +129,8 @@ body {
   position: relative;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  overflow-x: clip;
+  max-width: 100%;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }

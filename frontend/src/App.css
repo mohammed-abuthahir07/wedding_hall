@@ -11,6 +11,8 @@
   flex-direction: column;
   position: relative;
   width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 main {
@@ -802,6 +804,74 @@ section {
   flex-shrink: 0;
 }
 
+/* About Section — Auspicious Ceremonies Grid */
+.about-events-box {
+  margin-top: 52px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.about-events-title {
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.about-events-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+.about-events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.about-event-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px 20px 22px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.about-event-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-pink-border);
+  box-shadow: var(--shadow-md);
+}
+
+.about-event-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--accent-pink);
+  margin-bottom: 12px;
+}
+
+.about-event-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.about-event-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
 
 /* --------------------------------------------------------------------------
    Facilities Section
@@ -945,7 +1015,138 @@ section {
   line-height: 1.5;
 }
 
+/* Facilities Section — 3-Step Booking Guidance */
+.facilities-steps-wrap {
+  margin-top: 56px;
+}
 
+.facilities-steps-title {
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.facilities-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.facilities-step-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.facilities-step-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-pink-border);
+  box-shadow: var(--shadow-md);
+}
+
+.facilities-step-num {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--accent-pink);
+  line-height: 1;
+  margin-bottom: 14px;
+  opacity: 0.9;
+}
+
+.facilities-step-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.facilities-step-text {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Facilities Section — Additional Amenities Grid */
+.facilities-extra-amenities {
+  margin-top: 56px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.facilities-extra-title {
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.facilities-extra-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+.facilities-amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.facility-amenity-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 22px 20px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.facility-amenity-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-pink-border);
+  box-shadow: var(--shadow-md);
+}
+
+.facility-amenity-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--accent-pink-subtle);
+  color: var(--accent-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  border: 1px solid var(--accent-pink-border);
+}
+
+.facility-amenity-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.facility-amenity-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
 
 /* --------------------------------------------------------------------------
    Gallery Section
@@ -1035,6 +1236,83 @@ section {
   font-weight: 600;
   line-height: 1.4;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Gallery Categories Bar */
+.gallery-categories-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.gallery-category-pill {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gallery-category-pill:hover,
+.gallery-category-pill.active {
+  background-color: var(--accent-pink);
+  color: #FFFFFF;
+  border-color: var(--accent-pink);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Gallery Visit Invitation Banner */
+.gallery-visit-card {
+  margin-top: 48px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-visit-title {
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.gallery-visit-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 720px;
+  margin: 0 auto 20px;
+  line-height: 1.65;
+}
+
+.gallery-visit-highlights {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gallery-visit-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background-color: var(--accent-pink-subtle);
+  color: var(--accent-pink);
+  border: 1px solid var(--accent-pink-border);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 
 /* Lightbox Modal */
@@ -1252,6 +1530,28 @@ section {
   flex-shrink: 0;
 }
 
+.contact-route-info {
+  margin-top: 18px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-route-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.contact-route-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
 /* Right cards column */
 .contact-cards-col {
   display: flex;
@@ -1424,6 +1724,133 @@ section {
   font-weight: 700;
 }
 
+/* Contact Section — Nearby Landmark Distances */
+.contact-landmarks-wrap {
+  margin-top: 56px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-landmarks-title {
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.contact-landmarks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.contact-landmark-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.contact-landmark-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-pink-border);
+  box-shadow: var(--shadow-md);
+}
+
+.landmark-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--accent-pink-subtle);
+  color: var(--accent-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid var(--accent-pink-border);
+}
+
+.landmark-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.landmark-place-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+
+.landmark-distance-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.landmark-dist-highlight {
+  color: var(--accent-pink);
+  font-weight: 700;
+}
+
+/* Contact Section — Frequently Asked Questions (FAQ) */
+.contact-faq-wrap {
+  margin-top: 64px;
+}
+
+.contact-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.contact-faq-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.contact-faq-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-pink-border);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-faq-question {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.faq-q-mark {
+  color: var(--accent-pink);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.contact-faq-answer {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
 
 /* --------------------------------------------------------------------------
    Footer
@@ -1922,6 +2349,16 @@ section {
     gap: 14px;
   }
 
+  .about-events-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .facilities-amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
   /* Facilities */
   .facilities-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1982,9 +2419,34 @@ section {
     gap: 12px;
   }
 
+  .about-events-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
   .facilities-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .facilities-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .facilities-amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-landmarks-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .contact-cards-col {
@@ -2122,6 +2584,25 @@ section {
     padding: 24px 20px;
   }
 
+  .facilities-extra-amenities,
+  .facilities-steps-wrap,
+  .gallery-visit-card,
+  .contact-landmarks-wrap,
+  .contact-faq-wrap {
+    padding: 24px 16px;
+    margin-top: 40px;
+  }
+
+  .gallery-categories-bar {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .gallery-category-pill {
+    padding: 6px 12px;
+    font-size: 0.82rem;
+  }
+
   /* Gallery */
   .gallery-grid {
     grid-template-columns: 1fr;
@@ -2131,6 +2612,14 @@ section {
   /* Contact */
   .contact-two-col {
     gap: 28px;
+  }
+
+  .contact-landmark-card {
+    padding: 16px 14px;
+  }
+
+  .contact-faq-card {
+    padding: 20px 16px;
   }
 
   .contact-cards-col {

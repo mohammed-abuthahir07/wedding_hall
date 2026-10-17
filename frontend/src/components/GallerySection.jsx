@@ -58,6 +58,11 @@ export const GallerySection = () => {
           </p>
         </div>
 
+        {/* Gallery Highlights Categories */}
+        <div className="gallery-categories-bar scroll-reveal reveal-up" data-reveal-delay="0.08s">
+         
+        </div>
+
         {/* Each gallery card animates with directional motion (left, up, right) */}
         <div className="gallery-grid">
           {galleryImages.map((photo, index) => {
@@ -86,6 +91,21 @@ export const GallerySection = () => {
             </div>
           );
         })}
+        </div>
+
+        {/* Gallery Visit Invitation Banner */}
+        <div className="gallery-visit-card scroll-reveal reveal-up" data-reveal-delay="0.15s">
+          <div className="gallery-visit-content">
+            <h4 className="gallery-visit-title">நேரடியாக வந்து மண்டபத்தை பார்வையிட அன்போடு அழைக்கிறோம்</h4>
+            <p className="gallery-visit-text">
+              புகைப்படங்களில் காண்பதை விட நேரில் பார்வையிடும்போது எங்கள் சமூகப் பணிமன்றத்தின் அமைதியான சூழல், விசாலமான குளிர்சாதன இருக்கை அமைப்பு மற்றும் தூய்மையான சாப்பாட்டுக் கூடம் உங்களுக்கு முழு மனநிறைவை அளிக்கும்.
+            </p>
+            <div className="gallery-visit-highlights">
+              <span className="gallery-visit-tag">நேரடி உண்மை புகைப்படங்கள்</span>
+              <span className="gallery-visit-tag">அனைத்து சுபமுகூர்த்த ஏற்பாடுகள்</span>
+              <span className="gallery-visit-tag">முழு வழிகாட்டுதல்</span>
+            </div>
+          </div>
         </div>
       </div>
 

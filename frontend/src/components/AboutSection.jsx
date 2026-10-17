@@ -85,12 +85,12 @@ export const AboutSection = () => {
         {/* Stats row — slides up */}
         <div className="about-stats-row scroll-reveal reveal-up" data-reveal-delay="0.15s">
           {[
-            { num: '50+', label: 'ஆண்டுகள் சேவை' },
+            { num: '50+', label: 'ஆண்டுகள் பாரம்பரிய சேவை' },
             { num: '200', label: 'பேர் அரங்கு கொள்ளளவு' },
-            { num: '1000+', label: 'குடும்பங்கள் நம்பிக்கை' },
-            { num: '100%', label: 'திருப்தி உறுதி' },
+            { num: '1', label: 'தனி சாப்பாட்டுக் கூடம்' },
+            { num: 'A/C', label: 'முழு குளிர்சாதன வசதி' },
           ].map((stat, i, arr) => (
-            <React.Fragment key={stat.num}>
+            <React.Fragment key={stat.label}>
               <div className="about-stat-item">
                 <span className="about-stat-num">{stat.num}</span>
                 <span className="about-stat-label">{stat.label}</span>
@@ -98,6 +98,33 @@ export const AboutSection = () => {
               {i < arr.length - 1 && <div className="about-stat-divider"></div>}
             </React.Fragment>
           ))}
+        </div>
+
+        {/* Auspicious ceremonies block */}
+        <div className="about-events-box scroll-reveal reveal-up" data-reveal-delay="0.2s">
+          <h4 className="about-events-title">மண்டபத்தில் நடத்தப்படும் சுபநிகழ்ச்சிகள்</h4>
+          <p className="about-events-subtitle">
+            அனைத்து வகையான குடும்ப சுப மங்கள வைபவங்களுக்கும் ஏற்ற அமைதியான மற்றும் ராசியான சூழல்
+          </p>
+          <div className="about-events-grid">
+            {[
+              { title: 'திருமண விழாக்கள்', desc: 'மங்கள வாத்திய முழங்க சுப முகூர்த்த திருமணங்கள் இனிதே நடைபெற ஏற்ற விசாலமான அரங்கம்.' },
+              { title: 'நிச்சயதார்த்த வைபவம்', desc: 'இரு குடும்பத்தினரும் கூடி மகிழும் மங்களகரமான நிச்சயதார்த்த வைபவத்திற்கான சிறந்த வசதி.' },
+              { title: 'திருமண வரவேற்பு', desc: 'வருகை தரும் உறவினர்கள் மற்றும் நண்பர்களை வரவேற்று உபசரிக்க குளிரூட்டப்பட்ட வசதி.' },
+              { title: 'சீமந்தம் & வளைகாப்பு', desc: 'குடும்பத்தினர் ஆசியுடன் தாய்மை போற்றும் மங்களகரமான வளைகாப்பு வைபவங்கள்.' },
+              { title: 'சதாபிஷேகம் & மணிவிழா', desc: 'பெரியவர்களின் ஆயுள் நிறைவை போற்றி கொண்டாடும் 60, 70, 80-ஆம் ஆண்டு மணிவிழாக்கள்.' },
+              { title: 'குடும்ப சுபநிகழ்ச்சிகள்', desc: 'காதுகுத்து, பிறந்தநாள் மற்றும் அனைத்து குடும்ப சுப மங்கள நிகழ்வுகளுக்கான சாப்பாட்டு வசதி.' },
+            ].map((ev, idx) => {
+              const dirClass = idx % 2 === 0 ? 'reveal-left' : 'reveal-right';
+              return (
+                <div key={ev.title} className={`about-event-card scroll-reveal ${dirClass}`}>
+                  <div className="about-event-dot"></div>
+                  <h5 className="about-event-name">{ev.title}</h5>
+                  <p className="about-event-desc">{ev.desc}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
       </div>

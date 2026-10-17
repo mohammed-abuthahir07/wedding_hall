@@ -17,7 +17,7 @@ export const HeroSection = ({ onOpenEnquiry }) => {
         {/* Top Pill Badge */}
         <div className="hero-pill-badge hero-reveal-item delay-1">
           <KalasamIcon size={18} className="hero-badge-icon" />
-          <span>மதுரை ஞானஒலிவுபுரம் • திருமண மண்டபம்</span>
+          <span>மதுரை யானவொலிபுரம் • திருமண மண்டபம்</span>
         </div>
 
         {/* Main Heading */}
@@ -33,7 +33,7 @@ export const HeroSection = ({ onOpenEnquiry }) => {
 
         {/* Additional Line */}
         <p className="hero-organizer-line hero-reveal-item delay-4">
-          ஞானஒலிவுபுரம் சங்கத்தால் நடத்தப்படுகிறது
+          யானவொலிபுரம் சங்கத்தால் நடத்தப்படுகிறது
         </p>
 
         {/* Primary CTA Button */}
