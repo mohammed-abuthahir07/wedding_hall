@@ -17,7 +17,7 @@ export const AboutSection = () => {
           <h2 className="section-title">எங்களைப் பற்றி</h2>
           <div className="section-title-divider"></div>
           <p className="section-description">
-            மதுரை யானவொலிபுரத்தில் தலைமுறை தலைமுறையாக நம்பகமாக நிலைத்திருக்கும் திருமண மண்டபம்
+            மதுரை ஞானஒலிவுபுரம் தலைமுறை தலைமுறையாக நம்பகமாக நிலைத்திருக்கும் திருமண மண்டபம்
           </p>
         </div>
 
@@ -26,7 +26,7 @@ export const AboutSection = () => {
           {/* Left — text slides in from left */}
           <div className="about-text-col scroll-reveal reveal-left" data-reveal-delay="0.1s">
             <h3 className="about-card-headline">
-              மதுரை யானவொலிபுரத்தில் 50 ஆண்டுகளுக்கும் மேலான நன்மதிப்பும் பாரம்பரியமும்
+              மதுரை ஞானஒலிவுபுரம் 50 ஆண்டுகளுக்கும் மேலான நன்மதிப்பும் பாரம்பரியமும்
             </h3>
 
             <p className="about-description">
