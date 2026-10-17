@@ -154,7 +154,7 @@ export const FacilitiesSection = () => {
               <span className="facilities-step-num">02</span>
               <h5 className="facilities-step-heading">மண்டபத்தை நேரில் பார்வையிடல்</h5>
               <p className="facilities-step-text">
-                மதுரை யானவொலிபுரத்திற்கு நேரடியாக வருகை தந்து திருமண அரங்கு, மணமேடை மற்றும் சாப்பாட்டுக் கூடத்தை பார்வையிடலாம்.
+                மதுரை ஞானஒளிவுபுரத்திற்கு நேரடியாக வருகை தந்து திருமண அரங்கு, மணமேடை மற்றும் சாப்பாட்டுக் கூடத்தை பார்வையிடலாம்.
               </p>
             </div>
             <div className="facilities-step-card scroll-reveal reveal-right" data-reveal-delay="0.3s">

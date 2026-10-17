@@ -21,7 +21,7 @@ export const Footer = ({ onOpenEnquiry }) => {
               <span className="footer-brand-title">சமூகப் பணிமன்றம்</span>
             </div>
             <p className="footer-brand-desc">
-              மதுரை ஞானஒலிவுபுரம் 50 ஆண்டுகளுக்கும் மேலான பாரம்பரியம் கொண்ட ராசியான குளிர்சாதனத் திருமண மண்டபம். ஞானஒலிவுபுரம் சங்கத்தால் நடத்தப்படுகிறது.
+              மதுரை ஞானஒளிவுபுரம் 50 ஆண்டுகளுக்கும் மேலான பாரம்பரியம் கொண்ட ராசியான குளிர்சாதனத் திருமண மண்டபம். ஞானஒளிவுபுரம் சங்கத்தால் நடத்தப்படுகிறது.
             </p>
           </div>
 
@@ -48,9 +48,9 @@ export const Footer = ({ onOpenEnquiry }) => {
           {/* Contact — slides in from right */}
           <div className="footer-contact-column scroll-reveal reveal-right" data-reveal-delay="0.2s">
             <h4 className="footer-column-heading">தொடர்புக்கு</h4>
-            <p className="footer-contact-text"><strong>இடம்:</strong> ஞானஒலிவுபுரம், மதுரை</p>
+            <p className="footer-contact-text"><strong>இடம்:</strong> ஞானஒளிவுபுரம், மதுரை</p>
             <p className="footer-contact-text"><strong>தொலைபேசி:</strong> +91 9842191273</p>
-            <p className="footer-contact-text"><strong>நிர்வாகம்:</strong> ஞானஒலிவுபுரம் சங்கம்</p>
+            <p className="footer-contact-text"><strong>நிர்வாகம்:</strong> ஞானஒளிவுபுரம் சங்கம்</p>
             <div className="footer-action-buttons">
               <button type="button" className="footer-enquiry-btn" onClick={onOpenEnquiry}>
                 முன்பதிவு செய்ய
@@ -61,7 +61,7 @@ export const Footer = ({ onOpenEnquiry }) => {
 
         <div className="footer-bottom-bar scroll-reveal reveal-up">
           <p className="footer-copyright">
-            © 2026 சமூகப் பணிமன்றம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை. ஞானஒலிவுபுரம் சங்கம், மதுரை.
+            © 2026 சமூகப் பணிமன்றம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை. ஞானஒளிவுபுரம் சங்கம், மதுரை.
           </p>
         </div>
       </div>

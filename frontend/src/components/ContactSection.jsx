@@ -34,7 +34,7 @@ export const ContactSection = ({ onOpenEnquiry }) => {
               <img src={frontImg} alt="சமூகப் பணிமன்றம் திருமண மண்டபம் முகப்பு" className="contact-hall-img" loading="lazy" />
               <div className="contact-img-badge">
                 <KalasamIcon size={18} />
-                <span>ஞானஒலிவுபுரம், மதுரை</span>
+                <span>ஞானஒளிவுபுரம், மதுரை</span>
               </div>
             </div>
 
@@ -47,7 +47,7 @@ export const ContactSection = ({ onOpenEnquiry }) => {
                   '200 பேர் கொள்ளளவு',
                   'தனி சுத்தமான உணவுக்கூடம்',
                   'சுலப அணுகல் — மதுரை நகரில்',
-                  'ஞானஒலிவுபுரம் சங்கம் நிர்வாகம்',
+                  'ஞானஒளிவுபுரம் சங்கம் நிர்வாகம்',
                 ].map((item) => (
                   <li key={item} className="contact-why-item">
                     <span className="contact-why-check"><CheckIcon size={14} /></span>
@@ -60,7 +60,7 @@ export const ContactSection = ({ onOpenEnquiry }) => {
             <div className="contact-route-info">
               <h4 className="contact-route-title">எளிதான அமைவிடம் & வழித்தடம்</h4>
               <p className="contact-route-desc">
-                மதுரை மாநகரின் ஞானஒலிவுபுரம் அமைந்துள்ள எங்கள் திருமண மண்டபத்தை பேருந்து நிலையம் மற்றும் ரயில் நிலையத்திலிருந்து ஆட்டோ, கார் மற்றும் பேருந்து மூலம் மிக எளிதாக வந்தடையலாம்.
+                மதுரை மாநகரின் ஞானஒளிவுபுரம் அமைந்துள்ள எங்கள் திருமண மண்டபத்தை பேருந்து நிலையம் மற்றும் ரயில் நிலையத்திலிருந்து ஆட்டோ, கார் மற்றும் பேருந்து மூலம் மிக எளிதாக வந்தடையலாம்.
               </p>
             </div>
           </div>
@@ -108,8 +108,8 @@ export const ContactSection = ({ onOpenEnquiry }) => {
               </div>
               <div className="contact-card-content">
                 <h3 className="contact-card-label">அமைவிடம் & நிர்வாகம்</h3>
-                <p className="contact-card-value location-text">ஞானஒலிவுபுரம், மதுரை</p>
-                <p className="contact-card-sub">நிர்வாகம்: ஞானஒலிவுபுரம் சங்கம்</p>
+                <p className="contact-card-value location-text">ஞானஒளிவுபுரம், மதுரை</p>
+                <p className="contact-card-sub">நிர்வாகம்: ஞானஒளிவுபுரம் சங்கம்</p>
                 <button type="button" className="contact-card-action-btn enquiry-action-btn" onClick={onOpenEnquiry} aria-label="முன்பதிவு படிவத்தை திறக்கவும்">
                   முன்பதிவு படிவம்
                 </button>
@@ -137,10 +137,10 @@ export const ContactSection = ({ onOpenEnquiry }) => {
           <h4 className="contact-landmarks-title">முக்கிய இடங்களிலிருந்து எளிதான அமைவிட தூரம்</h4>
           <div className="contact-landmarks-grid">
             {[
-              { place: 'மதுரை சந்திப்பு ரயில் நிலையம்', distance: '~3.0 கி.மீ', time: '10 நிமிடங்கள்' },
-              { place: 'மதுரை பெரியார் பேருந்து நிலையம்', distance: '~3.5 கி.மீ', time: '12 நிமிடங்கள்' },
-              { place: 'மதுரை மீனாட்சி அம்மன் திருக்கோவில்', distance: '~4.0 கி.மீ', time: '15 நிமிடங்கள்' },
-              { place: 'மாட்டுத்தாவணி (MGR) பேருந்து நிலையம்', distance: '~7.5 கி.மீ', time: '20 நிமிடங்கள்' },
+              { place: 'மதுரை சந்திப்பு ரயில் நிலையம்', distance: '~4.0 கி.மீ', time: '10 நிமிடங்கள்' },
+              { place: 'மதுரை பெரியார் பேருந்து நிலையம்', distance: '~4.0 கி.மீ', time: '12 நிமிடங்கள்' },
+              { place: 'மதுரை மீனாட்சி அம்மன் திருக்கோவில்', distance: '~5.0 கி.மீ', time: '15 நிமிடங்கள்' },
+              { place: 'மாட்டுத்தாவணி (MGR) பேருந்து நிலையம்', distance: '~8.0 கி.மீ', time: '20 நிமிடங்கள்' },
             ].map((landmark, idx) => {
               const col = idx % 2;
               const dirClass = col === 0 ? 'reveal-left' : 'reveal-right';
