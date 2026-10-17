@@ -58,12 +58,7 @@ export const ContactSection = ({ onOpenEnquiry }) => {
               </ul>
             </div>
 
-            <div className="contact-route-info">
-              <h4 className="contact-route-title">எளிதான அமைவிடம் & வழித்தடம்</h4>
-              <p className="contact-route-desc">
-                மதுரை மாநகரின் ஞானஒளிவுபுரம் அமைந்துள்ள எங்கள் திருமண மண்டபத்தை பேருந்து நிலையம் மற்றும் ரயில் நிலையத்திலிருந்து ஆட்டோ, கார் மற்றும் பேருந்து மூலம் மிக எளிதாக வந்தடையலாம்.
-              </p>
-            </div>
+           
           </div>
 
           {/* Right — contact cards slide in from right */}
@@ -105,7 +100,7 @@ export const ContactSection = ({ onOpenEnquiry }) => {
                 <MapPinIcon size={28} className="contact-svg-icon" />
               </div>
               <div className="contact-card-content">
-                <h3 className="contact-card-label">அமைவிடம் & நிர்வாகம்</h3>
+                <h3 className="contact-card-label"> சமூக சேவை சங்கம்</h3>
                 <p className="contact-card-value location-text">ஞானஒளிவுபுரம், மதுரை</p>
                 <p className="contact-card-sub">நிர்வாகம்: ஞானஒளிவுபுரம் சங்கம்</p>
                 <button type="button" className="contact-card-action-btn enquiry-action-btn" onClick={onOpenEnquiry} aria-label="முன்பதிவு படிவத்தை திறக்கவும்">
@@ -115,18 +110,7 @@ export const ContactSection = ({ onOpenEnquiry }) => {
             </div>
 
             {/* Hours */}
-            <div className="contact-hours-box scroll-reveal reveal-up" data-reveal-delay="0.32s">
-              <h4 className="contact-hours-title">
-                <span className="contact-hours-dot"></span>
-                அலுவலக நேரம்
-              </h4>
-              <div className="contact-hours-grid">
-                <span className="contact-hours-day">திங்கள் – சனி</span>
-                <span className="contact-hours-time">காலை 8:00 – இரவு 9:00</span>
-                <span className="contact-hours-day">ஞாயிறு</span>
-                <span className="contact-hours-time">காலை 9:00 – மாலை 6:00</span>
-              </div>
-            </div>
+            
           </div>
         </div>
 
