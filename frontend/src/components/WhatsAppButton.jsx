@@ -4,7 +4,7 @@ import { WhatsAppIcon } from './Icons';
 
 export const WhatsAppButton = () => {
   // India country code (91) + 10-digit mobile number
-  const destinationNumber = '918682096578';
+  const destinationNumber = '919842191273';
 
   const defaultMessage =
     'வணக்கம்! குழந்தைசாமி அவர்களே சமூகப் பணிமன்றம் திருமண மண்டபம் பற்றிய விவரங்கள் அறிய விரும்புகிறேன்.';

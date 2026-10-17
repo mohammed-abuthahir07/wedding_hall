@@ -3,8 +3,8 @@ import { PhoneIcon, WhatsAppIcon, MapPinIcon, KalasamIcon, CheckIcon } from './I
 import frontImg from '../assets/img2.jpeg';
 
 export const ContactSection = ({ onOpenEnquiry }) => {
-  const phoneNumber = '8682096578';
-  const whatsappUrl = `https://wa.me/918682096578?text=${encodeURIComponent(
+  const phoneNumber = '9842191273';
+  const whatsappUrl = `https://wa.me/919842191273?text=${encodeURIComponent(
     'வணக்கம்! சமூகப் பணிமன்றம் திருமண மண்டபம் முன்பதிவு மற்றும் விவரங்களை அறிய விரும்புகிறேன்.'
   )}`;
 
