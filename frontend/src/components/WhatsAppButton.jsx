@@ -1,17 +1,13 @@
 
 import React from 'react';
 import { WhatsAppIcon } from './Icons';
+import { buildWhatsAppUrl } from '../utils/whatsapp';
 
 export const WhatsAppButton = () => {
-  // India country code (91) + 10-digit mobile number
-  const destinationNumber = '918870889819';
-
   const defaultMessage =
-    'வணக்கம்! குழந்தைசாமி அவர்களே சமூகப் பணிமன்றம் திருமண மண்டபம் பற்றிய விவரங்கள் அறிய விரும்புகிறேன்.';
+    'வணக்கம்! சமூகப் பணிமன்றம் திருமண மண்டபம் பற்றிய விவரங்கள் அறிய விரும்புகிறேன்.';
 
-  const whatsappUrl = `https://wa.me/${destinationNumber}?text=${encodeURIComponent(
-    defaultMessage
-  )}`;
+  const whatsappUrl = buildWhatsAppUrl(defaultMessage);
 
   return (
     <aside aria-label="WhatsApp தொடர்பு">

@@ -31,9 +31,16 @@ export const HeroSection = ({ onOpenEnquiry }) => {
           50 ஆண்டுகளுக்கும் மேலான பாரம்பரியம் கொண்ட மண்டபம்
         </p>
 
-        {/* Additional Line */}
+        {/* Organization Name */}
+        
+
+        {/* Existing Subtitle */}
         <p className="hero-organizer-line hero-reveal-item delay-4">
-          ஞானஒளிவுபுரம் சங்கத்தால் நடத்தப்படுகிறது
+          ஞானஒளிவுபுரம் சமூக சேவை சங்கத்தால் நடத்தப்படுகிறது
+        </p>
+
+        <p className="hero-organization hero-reveal-item delay-4">
+          (சமூகப் பணிமன்றம்)
         </p>
 
         {/* Primary CTA Button */}

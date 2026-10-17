@@ -1,12 +1,13 @@
 import React from 'react';
 import { PhoneIcon, WhatsAppIcon, MapPinIcon, KalasamIcon, CheckIcon } from './Icons';
 import frontImg from '../assets/img2.jpeg';
+import { buildWhatsAppUrl, DISPLAY_PHONE_NUMBER } from '../utils/whatsapp';
 
 export const ContactSection = ({ onOpenEnquiry }) => {
-  const phoneNumber = '8870889819';
-  const whatsappUrl = `https://wa.me/918870889819?text=${encodeURIComponent(
+  const phoneNumber = DISPLAY_PHONE_NUMBER;
+  const whatsappUrl = buildWhatsAppUrl(
     'வணக்கம்! சமூகப் பணிமன்றம் திருமண மண்டபம் முன்பதிவு மற்றும் விவரங்களை அறிய விரும்புகிறேன்.'
-  )}`;
+  );
 
   return (
     <section id="contact" className="contact-section" aria-label="தொடர்பு பிரிவு">

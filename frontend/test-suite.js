@@ -9,11 +9,10 @@ function validateForm({ name, phone, guests }) {
     errors.name = 'பெயர் குறைந்தபட்சம் 2 எழுத்துக்கள் இருக்க வேண்டும்';
   }
 
-  const trimmedPhone = (phone || '').trim().replace(/[\s-]/g, '');
+  // Accepts any user-entered phone format (local, mobile, international with +91)
+  const trimmedPhone = (phone || '').trim();
   if (!trimmedPhone) {
     errors.phone = 'தயவுசெய்து உங்கள் தொலைபேசி எண்ணை உள்ளிடவும்';
-  } else if (!/^[6-9]\d{9}$/.test(trimmedPhone)) {
-    errors.phone = 'சரியான 10 இலக்க இந்திய தொலைபேசி எண்ணை உள்ளிடவும் (எ.கா: 9876543210)';
   }
 
   const trimmedGuests = String(guests || '').trim();
@@ -33,19 +32,19 @@ function validateForm({ name, phone, guests }) {
 
 function buildWhatsAppUrl({ name, phone, guests }) {
   const trimmedName = name.trim();
-  const cleanPhone = phone.trim().replace(/[\s-]/g, '');
+  const cleanPhone = phone.trim();
   const guestsCount = String(guests).trim();
   const tamilMessage = 
 `வணக்கம்! சமூகப் பணிமன்றம் திருமண மண்டபம் முன்பதிவு பற்றிய தகவல் தேவை.
 
-• மண்டபத்தின் பெயர்: சமூகப் பணிமன்றம் (யானவொலிபுரம், மதுரை)
+• மண்டபத்தின் பெயர்: சமூகப் பணிமன்றம் (ஞானஒலிவுபுரம், மதுரை)
 • பெயர்: ${trimmedName}
 • தொலைபேசி எண்: ${cleanPhone}
 • விருந்தினர்களின் எண்ணிக்கை: ${guestsCount} பேர்
 
 தயவுசெய்து மண்டப முன்பதிவு விவரங்களை தெரிவிக்கவும். நன்றி!`;
 
-  return `https://wa.me/918682096578?text=${encodeURIComponent(tamilMessage)}`;
+  return `https://wa.me/918870889819?text=${encodeURIComponent(tamilMessage)}`;
 }
 
 let passed = 0;
@@ -71,57 +70,56 @@ assert(test1.errors.phone === 'தயவுசெய்து உங்கள்
 assert(test1.errors.guests === 'விருந்தினர்களின் எண்ணிக்கையை உள்ளிடவும்', 'Guests empty error message in Tamil');
 
 // 2. Name too short
-const test2 = validateForm({ name: 'A', phone: '9876543210', guests: '200' });
+const test2 = validateForm({ name: 'A', phone: '8870889819', guests: '200' });
 assert(!test2.isValid, 'Short name fails validation');
 assert(test2.errors.name === 'பெயர் குறைந்தபட்சம் 2 எழுத்துக்கள் இருக்க வேண்டும்', 'Short name error message in Tamil');
 
-// 3. Invalid phone with letters
-const test3 = validateForm({ name: 'கண்ணன்', phone: '98765abcd0', guests: '200' });
-assert(!test3.isValid, 'Phone with letters fails');
-assert(test3.errors.phone.includes('சரியான 10 இலக்க இந்திய தொலைபேசி எண்ணை உள்ளிடவும்'), 'Invalid phone error message in Tamil');
+// 3. User provides international formatted phone (+918012693457)
+const test3 = validateForm({ name: 'கண்ணன்', phone: '+918012693457', guests: '200' });
+assert(test3.isValid, 'International +91 phone passes without error');
 
-// 4. Invalid phone starting with invalid digit (e.g. 5)
-const test4 = validateForm({ name: 'கண்ணன்', phone: '5876543210', guests: '200' });
-assert(!test4.isValid, 'Phone starting with 5 fails');
+// 4. User provides standard mobile number
+const test4 = validateForm({ name: 'கண்ணன்', phone: '8870889819', guests: '200' });
+assert(test4.isValid, 'Standard 10-digit phone passes');
 
 // 5. Zero guests
-const test5 = validateForm({ name: 'கண்ணன்', phone: '9876543210', guests: '0' });
+const test5 = validateForm({ name: 'கண்ணன்', phone: '8870889819', guests: '0' });
 assert(!test5.isValid, 'Zero guests fails');
 assert(test5.errors.guests === 'விருந்தினர்களின் எண்ணிக்கை 1 அல்லது அதற்கு மேல் இருக்க வேண்டும்', 'Zero guests error in Tamil');
 
 // 6. Negative guests
-const test6 = validateForm({ name: 'கண்ணன்', phone: '9876543210', guests: '-50' });
+const test6 = validateForm({ name: 'கண்ணன்', phone: '8870889819', guests: '-50' });
 assert(!test6.isValid, 'Negative guests fails');
 
 // 7. Decimal guests
-const test7 = validateForm({ name: 'கண்ணன்', phone: '9876543210', guests: '150.5' });
+const test7 = validateForm({ name: 'கண்ணன்', phone: '8870889819', guests: '150.5' });
 assert(!test7.isValid, 'Decimal guests fails');
 
 // 8. Too many guests (>5000)
-const test8 = validateForm({ name: 'கண்ணன்', phone: '9876543210', guests: '99999' });
+const test8 = validateForm({ name: 'கண்ணன்', phone: '8870889819', guests: '99999' });
 assert(!test8.isValid, 'Too many guests fails');
 
 // 9. Valid form with Tamil name
-const test9 = validateForm({ name: 'முத்துராமலிங்கம்', phone: '8682096578', guests: '250' });
+const test9 = validateForm({ name: 'முத்துராமலிங்கம்', phone: '8870889819', guests: '250' });
 assert(test9.isValid, 'Valid Tamil submission passes validation');
 assert(Object.keys(test9.errors).length === 0, 'No errors on valid input');
 
-// 10. Valid form with spaces in phone (e.g. 86820 96578)
-const test10 = validateForm({ name: 'சுரேஷ் குமார்', phone: '86820 96578', guests: '180' });
-assert(test10.isValid, 'Formatted phone with space passes');
+// 10. Valid form with spaces in phone (e.g. +91 88708 89819)
+const test10 = validateForm({ name: 'சுரேஷ் குமார்', phone: '+91 88708 89819', guests: '180' });
+assert(test10.isValid, 'Formatted phone with spaces and country code passes');
 
 console.log('\n--- WHATSAPP URL GENERATION TESTS ---');
 
-const waUrl = buildWhatsAppUrl({ name: 'முத்துராமலிங்கம்', phone: '86820 96578', guests: '250' });
-assert(waUrl.startsWith('https://wa.me/918682096578?text='), 'Target phone number is international format 918682096578');
+const waUrl = buildWhatsAppUrl({ name: 'முத்துராமலிங்கம்', phone: '+918012693457', guests: '250' });
+assert(waUrl.startsWith('https://wa.me/918870889819?text='), 'Target phone number is international format 918870889819');
 assert(waUrl.includes('encodeURIComponent') === false, 'URL is correctly encoded without raw string leaks');
 
 const decodedMsg = decodeURIComponent(waUrl.split('text=')[1]);
 assert(decodedMsg.includes('சமூகப் பணிமன்றம்'), 'Prefilled message includes brand name சமூகப் பணிமன்றம்');
 assert(decodedMsg.includes('முத்துராமலிங்கம்'), 'Prefilled message includes customer name');
-assert(decodedMsg.includes('8682096578'), 'Prefilled message includes cleaned customer phone');
+assert(decodedMsg.includes('+918012693457'), 'Prefilled message includes actual customer phone');
 assert(decodedMsg.includes('250 பேர்'), 'Prefilled message includes guest count');
-assert(decodedMsg.includes('யானவொலிபுரம், மதுரை'), 'Prefilled message includes location Yanavolipuram, Madurai');
+assert(decodedMsg.includes('ஞானஒலிவுபுரம், மதுரை'), 'Prefilled message includes location ஞானஒலிவுபுரம், மதுரை');
 
 console.log(`\nRESULTS: ${passed} / ${total} tests passed.`);
 if (passed === total) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { CloseIcon, WhatsAppIcon, KalasamIcon, CheckIcon } from './Icons';
+import { buildWhatsAppUrl } from '../utils/whatsapp';
 
 export const EnquiryPopup = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -115,36 +116,25 @@ const handleSubmit = (e) => {
   if (!validate()) return;
 
   const trimmedName = formData.name.trim();
-  const cleanPhone = formData.phone.trim().replace(/[\s-]/g, '');
+  const cleanPhone = formData.phone.trim();
   const guestsCount = String(formData.guests).trim();
 
   const tamilMessage = `வணக்கம்! சமூகப் பணிமன்றம் திருமண மண்டபம் முன்பதிவு பற்றிய தகவல் தேவை.
 
-• மண்டபத்தின் பெயர்: சமூகப் பணிமன்றம் (ஞானஒளிவுபுரம், மதுரை)
+• மண்டபத்தின் பெயர்: சமூகப் பணிமன்றம் (ஞானஒலிவுபுரம், மதுரை)
 • பெயர்: ${trimmedName}
 • தொலைபேசி எண்: ${cleanPhone}
 • விருந்தினர்களின் எண்ணிக்கை: ${guestsCount} பேர்
 
 தயவுசெய்து மண்டப முன்பதிவு விவரங்களை தெரிவிக்கவும். நன்றி!`;
 
-  const destinationNumber = '918870889819';
-  const whatsappUrl =
-    `https://wa.me/${destinationNumber}?text=${encodeURIComponent(tamilMessage)}`;
+  const whatsappUrl = buildWhatsAppUrl(tamilMessage);
 
   setLastWhatsAppUrl(whatsappUrl);
 
-  // Open WhatsApp directly from the submit click
-  const whatsappWindow = window.open(
-    whatsappUrl,
-    '_blank'
-  );
-
-  if (whatsappWindow) {
-    setIsSubmitted(true);
-  } else {
-    // If the browser blocks the new tab, show the fallback link
-    setIsSubmitted(true);
-  }
+  // Open WhatsApp directly from the user's submit interaction
+  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  setIsSubmitted(true);
 };
 
 
@@ -194,9 +184,9 @@ const handleSubmit = (e) => {
             <div className="success-icon-wrap">
               <CheckIcon size={32} />
             </div>
-            <h3 className="success-heading">விவரங்கள் பெறப்பட்டன!</h3>
+            <h3 className="success-heading">WhatsApp திறக்கப்பட்டுள்ளது</h3>
             <p className="success-desc">
-              உங்கள் முன்பதிவு தகவல் தயாராகி WhatsApp திறக்கப்பட்டுள்ளது. அங்கு செய்தியை சரிபார்த்து அனுப்பவும்.
+              உங்கள் முன்பதிவு தகவலுடன் WhatsApp திறக்கப்பட்டுள்ளது. அங்கு 'Send' அழுத்தி மண்டப நிர்வாகத்திற்கு செய்தியை அனுப்பவும்.
             </p>
             <div className="success-actions">
               <a
@@ -255,7 +245,7 @@ const handleSubmit = (e) => {
                 name="phone"
                 type="tel"
                 className={`form-input ${errors.phone ? 'input-error' : ''}`}
-                placeholder="தொலைபேசி எண் (எ.கா: +91 9876543210)"
+                placeholder="தொலைபேசி எண் (எ.கா: +91 8870889819)"
                 value={formData.phone}
                 onChange={handleChange}
                 autoComplete="tel"
