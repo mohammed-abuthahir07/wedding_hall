@@ -1,6 +1,6 @@
 import React from 'react';
 import { PhoneIcon, WhatsAppIcon, MapPinIcon, KalasamIcon, CheckIcon } from './Icons';
-import frontImg from '../assets/img2.jpeg';
+import frontImg from '../assets/img20.webp';
 import { buildWhatsAppUrl, DISPLAY_PHONE_NUMBER } from '../utils/whatsapp';
 
 export const ContactSection = ({ onOpenEnquiry }) => {

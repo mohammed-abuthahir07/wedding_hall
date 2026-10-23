@@ -5,7 +5,7 @@ import Lightbox from './Lightbox';
 import heroBg from '../assets/background.jpeg';
 import img2 from '../assets/img2.jpeg';
 import img5 from '../assets/img12.webp';
-import img7 from '../assets/img7.jpeg';
+import img7 from '../assets/img7.jpg';
 import img8 from '../assets/img11.jpeg';
 import img9 from '../assets/img9.jpeg';
 import img11 from '../assets/img15.webp';
