@@ -163,7 +163,6 @@
 }
 
 /* Tablet */
-
 @media (max-width: 768px) {
   .guests-page {
     padding: 30px 20px 40px;
@@ -173,20 +172,30 @@
     gap: 18px;
   }
 
+  .guests-heading h1 {
+    font-size: 24px;
+    line-height: 1.8;
+  }
+
+  .guests-heading > p {
+    font-size: 15px;
+  }
+
   .guest-card-content {
     padding: 18px;
   }
 
   .guest-card-content h2 {
-    font-size: 17px;
+    font-size: 20px;
   }
 
   .guest-card-content p {
-    font-size: 12px;
+    font-size: 15px;
+    line-height: 2.1;
   }
 }
 
-/* Mobile */
+/* Mobile: keep the same font sizes */
 
 @media (max-width: 600px) {
   .guests-page {
@@ -204,6 +213,7 @@
 
   .guests-heading > p {
     font-size: 15px;
+    line-height: 2;
   }
 
   .guests-grid {
@@ -225,7 +235,8 @@
 
   .guest-card-content h2 {
     margin-bottom: 8px;
-    font-size: 16px;
+    font-size: 20px;
+    line-height: 1.8;
   }
 
   .guest-card-content p {
@@ -233,14 +244,12 @@
     line-height: 2.1;
   }
 
-  /* Touch screens do not have hover */
   .guest-image-overlay {
     display: none;
   }
-  
 }
 
-/* Small phones */
+/* Small phones: preserve the same font sizes */
 
 @media (max-width: 360px) {
   .guests-page {
@@ -253,9 +262,20 @@
   }
 
   .guests-heading h1 {
-    font-size: 22px;
+    font-size: 24px;
   }
-  
+
+  .guests-heading > p {
+    font-size: 15px;
+  }
+
+  .guest-card-content h2 {
+    font-size: 20px;
+  }
+
+  .guest-card-content p {
+    font-size: 15px;
+  }
 }
 
 /* Reduced motion */
