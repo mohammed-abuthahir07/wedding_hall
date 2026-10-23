@@ -1979,23 +1979,215 @@ section {
 .footer-enquiry-btn:hover {
   background-color: var(--accent-pink-hover);
 }
+/* ========================================
+   FOOTER BOTTOM BAR — ALL DEVICES
+======================================== */
 
 .footer-bottom-bar {
-  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px 24px;
+  width: 100%;
+  padding: 24px 0 0;
   border-top: 1px solid var(--border-color);
-  text-align: center;
+  box-sizing: border-box;
 }
+
+/* ========================================
+   TAMIL COPYRIGHT TEXT
+======================================== */
 
 .footer-copyright {
-  font-size: 0.9rem;
-  color: var(--text-muted);
+  font-family: 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Latha', 'Vijaya', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  text-align: left;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
 }
 
-.footer-copyright1{
-  margin-top: 20px;
-  font-size: 10px;
+/* ========================================
+   ENGLISH DESIGNER CREDIT
+======================================== */
+
+.footer-copyright1 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.74);
+  text-align: right;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  white-space: normal;
 }
 
+.footer-copyright1 span {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.74);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  overflow-wrap: anywhere;
+  transition: opacity 0.3s ease;
+}
+
+
+/* ========================================
+   LARGE DESKTOPS — 1440px AND ABOVE
+======================================== */
+
+@media (min-width: 1440px) {
+  .footer-bottom-bar {
+    padding-top: 26px;
+    gap: 24px;
+  }
+
+  .footer-copyright {
+    font-size: 15px;
+  }
+
+  .footer-copyright1 {
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   LAPTOPS & DESKTOPS — 1025px TO 1439px
+======================================== */
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .footer-bottom-bar {
+    padding-top: 24px;
+    gap: 20px;
+  }
+
+  .footer-copyright {
+    font-size: 14px;
+  }
+
+  .footer-copyright1 {
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   TABLETS — 768px TO 1024px
+======================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer-bottom-bar {
+    gap: 16px;
+    padding-top: 22px;
+  }
+
+  .footer-copyright {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .footer-copyright1 {
+    font-size: 12px;
+  }
+}
+
+/* ========================================
+   LARGE MOBILE — 481px TO 767px
+======================================== */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .footer-bottom-bar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 12px 0;
+  }
+
+  .footer-copyright {
+    flex: none;
+    width: 100%;
+    font-size: 13px;
+    line-height: 1.9;
+    text-align: center;
+  }
+
+  .footer-copyright1 {
+    width: 100%;
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+/* ========================================
+   MOBILE — 361px TO 480px
+======================================== */
+
+@media (min-width: 361px) and (max-width: 480px) {
+  .footer-bottom-bar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 8px 0;
+  }
+
+  .footer-copyright {
+    flex: none;
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.9;
+    text-align: center;
+  }
+
+  .footer-copyright1 {
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: center;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE — 360px AND BELOW
+======================================== */
+
+@media (max-width: 360px) {
+  .footer-bottom-bar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 6px 0;
+  }
+
+  .footer-copyright {
+    flex: none;
+    width: 100%;
+    font-size: 11px;
+    line-height: 1.9;
+    text-align: center;
+  }
+
+  .footer-copyright1 {
+    width: 100%;
+    font-size: 11px;
+    line-height: 1.7;
+    text-align: center;
+  }
+}
 
 
 /* --------------------------------------------------------------------------

@@ -63,7 +63,9 @@ export const Footer = ({ onOpenEnquiry }) => {
           <p className="footer-copyright">
             © 2026 சமூகப் பணிமன்றம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை. ஞானஒளிவுபுரம் சங்கம், மதுரை.
           </p>
-          <p className='footer-copyright1'>Powered By @Zayithtechnologies</p>
+        <p className="footer-copyright1">
+        Powered by <span style={{textDecoration:"underLine"}}>@ZayithTechnologies</span>
+      </p>
         </div>
       </div>
     </footer>
