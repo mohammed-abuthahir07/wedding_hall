@@ -1,0 +1,269 @@
+
+.guests-page {
+  --guest-pink: #ec4383;
+  --guest-pink-light: #fff2f7;
+  --guest-text: #191919;
+  --guest-muted: #626b76;
+  --guest-border: #e5e7eb;
+
+  width: 100%;
+  padding: 38px 24px 50px;
+  background: #fff;
+  color: var(--guest-text);
+
+    font-family: 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Latha', 'Vijaya', sans-serif;
+
+}
+
+.guests-page *,
+.guests-page *::before,
+.guests-page *::after {
+  box-sizing: border-box;
+}
+
+/* Section heading */
+
+.guests-section {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.guests-heading {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.guests-label {
+  display: inline-block;
+  padding: 7px 16px;
+  border: 1px solid #ffc1d8;
+  border-radius: 30px;
+  background: var(--guest-pink-light);
+  color: var(--guest-pink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.guests-heading h1 {
+  margin: 14px 0 10px;
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+.guests-heading > p {
+  margin: 0;
+  color: var(--guest-muted);
+  font-size: 16px;
+  line-height: 2;
+}
+
+/* Two cards */
+
+.guests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  align-items: stretch;
+}
+
+.guest-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--guest-border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.035);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.guest-card:hover {
+  transform: translateY(-4px);
+  border-color: #f3b4cd;
+  box-shadow: 0 12px 28px rgba(236, 67, 131, 0.1);
+}
+
+/* Card image */
+
+.guest-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.guest-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.guest-card:hover .guest-image {
+  transform: scale(1.05);
+}
+
+/* Title on image hover */
+
+.guest-image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(25, 15, 20, 0.55);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.guest-image-overlay h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 800;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.guest-card:hover .guest-image-overlay {
+  opacity: 1;
+}
+
+/* Card content */
+
+.guest-card-content {
+  padding: 22px 24px 25px;
+}
+
+.guest-card-content h2 {
+  margin: 0 0 10px;
+  color: var(--guest-text);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.8;
+}
+
+.guest-card-content p {
+  margin: 0;
+  color: var(--guest-muted);
+  font-size: 16px;
+  line-height: 2.1;
+  overflow-wrap: anywhere;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .guests-page {
+    padding: 30px 20px 40px;
+  }
+
+  .guests-grid {
+    gap: 18px;
+  }
+
+  .guest-card-content {
+    padding: 18px;
+  }
+
+  .guest-card-content h2 {
+    font-size: 17px;
+  }
+
+  .guest-card-content p {
+    font-size: 12px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .guests-page {
+    padding: 24px 16px 35px;
+  }
+
+  .guests-heading {
+    margin-bottom: 23px;
+  }
+
+  .guests-heading h1 {
+    font-size: 24px;
+    line-height: 1.8;
+  }
+
+  .guests-heading > p {
+    font-size: 15px;
+  }
+
+  .guests-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .guest-card {
+    border-radius: 13px;
+  }
+
+  .guest-image-wrapper {
+    aspect-ratio: 16 / 10;
+  }
+
+  .guest-card-content {
+    padding: 18px 19px 21px;
+  }
+
+  .guest-card-content h2 {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+
+  .guest-card-content p {
+    font-size: 15px;
+    line-height: 2.1;
+  }
+
+  /* Touch screens do not have hover */
+  .guest-image-overlay {
+    display: none;
+  }
+  
+}
+
+/* Small phones */
+
+@media (max-width: 360px) {
+  .guests-page {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .guest-card-content {
+    padding: 16px;
+  }
+
+  .guests-heading h1 {
+    font-size: 22px;
+  }
+  
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .guest-card,
+  .guest-image,
+  .guest-image-overlay {
+    transition: none;
+  }
+}

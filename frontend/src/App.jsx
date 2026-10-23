@@ -9,6 +9,8 @@ import Footer from './components/Footer';
 import EnquiryPopup from './components/EnquiryPopup';
 import WhatsAppButton from './components/WhatsAppButton';
 import './App.css';
+import Manivizah  from '../src/components/Manivizah';
+import Guests from './components/Guests';
 
 export const App = () => {
   const [theme, setTheme] = useState(() => {
@@ -111,7 +113,9 @@ export const App = () => {
         <HeroSection onOpenEnquiry={() => setIsPopupOpen(true)} />
         <AboutSection />
         <FacilitiesSection />
-        <GallerySection />
+        <Manivizah/>
+        <GallerySection  />
+        <Guests/>
         <ContactSection onOpenEnquiry={() => setIsPopupOpen(true)} />
       </main>
 

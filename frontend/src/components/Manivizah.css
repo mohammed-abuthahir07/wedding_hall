@@ -1,0 +1,254 @@
+
+.manivizah-page {
+  --mv-pink: #ec4383;
+  --mv-pink-dark: #d92f70;
+  --mv-text: #191919;
+  --mv-muted: #626b76;
+  --mv-border: #f4b5ce;
+
+  width: 100%;
+  padding: 32px 24px;
+  background: #fff;
+  color: var(--mv-text);
+
+  font-family: 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Latha', 'Vijaya', sans-serif;
+}
+
+.manivizah-page *,
+.manivizah-page *::before,
+.manivizah-page *::after {
+  box-sizing: border-box;
+}
+
+/* Laptop layout */
+
+.mv-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+
+  width: 100%;
+  max-width: 1330px;
+  margin: 0 auto;
+}
+
+/* Image and hover overlay */
+
+.mv-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #f4f4f4;
+  isolation: isolate;
+}
+
+.mv-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.mv-image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(30, 15, 23, 0.55);
+
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.mv-image-overlay h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 800;
+  line-height: 1.8;
+  text-align: center;
+  transform: translateY(15px);
+  transition: transform 0.35s ease;
+}
+
+/* Hover on desktop */
+
+.mv-image-wrapper:hover .mv-image {
+  transform: scale(1.06);
+}
+
+.mv-image-wrapper:hover .mv-image-overlay {
+  opacity: 1;
+}
+
+.mv-image-wrapper:hover .mv-image-overlay h2 {
+  transform: translateY(0);
+}
+
+/* Keyboard accessibility */
+
+.mv-image-wrapper:focus-within .mv-image-overlay {
+  opacity: 1;
+}
+
+/* Content box */
+
+.mv-content-box {
+  min-width: 0;
+  padding: 27px 26px;
+  border: 1.5px solid var(--mv-border);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(236, 67, 131, 0.06);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mv-content-box:hover {
+  border-color: var(--mv-pink);
+  box-shadow: 0 12px 32px rgba(236, 67, 131, 0.1);
+}
+
+.mv-content-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--mv-pink);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.mv-content-box h1 {
+  margin: 0 0 18px;
+  color: var(--mv-text);
+  font-size: clamp(25px, 2.5vw, 36px);
+  font-weight: 800;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.mv-content-box p {
+  margin: 0;
+  color: var(--mv-muted);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2.1;
+  overflow-wrap: anywhere;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .manivizah-page {
+    padding: 28px 20px;
+  }
+
+  .mv-layout {
+    gap: 22px;
+  }
+
+  .mv-image-wrapper {
+    height: 310px;
+  }
+
+  .mv-content-box {
+    padding: 22px;
+  }
+
+  .mv-content-box h1 {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .mv-content-box p {
+    font-size: 13px;
+  }
+}
+
+/* Mobile: image above content */
+
+@media (max-width: 600px) {
+  .manivizah-page {
+    padding: 22px 16px 30px;
+  }
+
+  .mv-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .mv-image-wrapper {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+  }
+
+  /* Show title on tap/focus for touch devices */
+  .mv-image-wrapper:active .mv-image-overlay,
+  .mv-image-wrapper:focus-within .mv-image-overlay {
+    opacity: 1;
+  }
+
+  .mv-image-overlay h2 {
+    font-size: 25px;
+  }
+
+  .mv-content-box {
+    padding: 22px 20px;
+    border-radius: 14px;
+  }
+
+  .mv-content-box h1 {
+    font-size: 24px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  .mv-content-box p {
+    font-size: 13px;
+    line-height: 2.1;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 360px) {
+  .manivizah-page {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .mv-layout {
+    gap: 16px;
+  }
+
+  .mv-content-box {
+    padding: 18px 15px;
+  }
+
+  .mv-content-box h1 {
+    font-size: 22px;
+  }
+
+  .mv-content-box p {
+    font-size: 12px;
+  }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .mv-image,
+  .mv-image-overlay,
+  .mv-image-overlay h2,
+  .mv-content-box {
+    transition: none;
+  }
+}

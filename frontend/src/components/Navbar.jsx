@@ -92,7 +92,7 @@ export const Navbar = ({ theme, onToggleTheme, onOpenEnquiry }) => {
         {/* ── Right-side action buttons ── */}
         <div className="navbar-actions">
           {/* Theme Toggle */}
-          <button
+          {/* <button
             type="button"
             className="theme-toggle-btn"
             onClick={onToggleTheme}
@@ -103,7 +103,7 @@ export const Navbar = ({ theme, onToggleTheme, onOpenEnquiry }) => {
               ? <SunIcon size={20} className="theme-icon sun-icon" />
               : <MoonIcon size={20} className="theme-icon moon-icon" />
             }
-          </button>
+          </button> */}
 
           {/* Enquiry Button — hidden on small screens, shown via drawer instead */}
           <button
