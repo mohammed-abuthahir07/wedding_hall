@@ -64,7 +64,7 @@ export const FacilitiesSection = () => {
                 data-reveal-delay={`${idx * 0.12}s`}
               >
                 <div className="facility-card-img-wrap">
-                  <img src={fac.img} alt={fac.imgAlt} className="facility-card-img" loading="lazy" />
+                  <img src={fac.img} alt={fac.imgAlt} className="facility-card-img" width={800} height={450} loading="lazy" decoding="async" />
                   <div className="facility-card-img-overlay"></div>
                 </div>
                 <div className="facility-card-body">

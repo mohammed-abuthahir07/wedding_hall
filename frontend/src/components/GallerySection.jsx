@@ -5,10 +5,7 @@ import Lightbox from './Lightbox';
 import heroBg from '../assets/background.jpeg';
 import img2 from '../assets/img2.jpeg';
 import img5 from '../assets/img12.webp';
-import img7 from '../assets/img7.jpg';
-import img8 from '../assets/img11.jpeg';
 import img9 from '../assets/img9.jpeg';
-import img11 from '../assets/img15.webp';
 import img18 from '../assets/img18.webp';
 import img19 from '../assets/img19.webp';
 
@@ -23,9 +20,6 @@ export const GallerySection = () => {
     { src: img5, title: 'குளிரூட்டப்பட்ட திருமண அரங்கம்', alt: 'குளிர்சாதன திருமண அரங்கு தோற்றம்' },
     { src: img18, title: 'அலங்கரிக்கப்பட்ட திருமண மேடை', alt: 'சுபநிகழ்ச்சிகளுக்கான திருமண மேடை அமைப்பு' },
     { src: img9, title: 'உணவு அருந்துவதற்கான தனி உணவுக்கூடம்', alt: 'சமூகப் பணிமன்றம் சாப்பாட்டுக் கூடம்' },
-    // { src: img8, title: 'மண்டப நுழைவு வாயில் மற்றும் நடைபாதை', alt: 'மண்டப வரவேற்பு மற்றும் நுழைவுப் பகுதி' },
-    // { src: img7, title: 'விருந்தினர் அமரும் குளிர்சாதன பகுதி', alt: 'விருந்தினர் அரங்கு தோற்றம்' },
-    // { src: img11, title: 'மண்டபத்தின் முழுமையான உட்புற அமைப்பு', alt: 'சமூகப் பணிமன்றம் திருமண மண்டபம் முழு தோற்றம்' },
   ];
 
   const handleOpenLightbox = (index) => {
@@ -58,11 +52,6 @@ export const GallerySection = () => {
           </p>
         </div>
 
-        {/* Gallery Highlights Categories */}
-        <div className="gallery-categories-bar scroll-reveal reveal-up" data-reveal-delay="0.08s">
-         
-        </div>
-
         {/* Each gallery card animates with directional motion (left, up, right) */}
         <div className="gallery-grid">
           {galleryImages.map((photo, index) => {
@@ -82,7 +71,7 @@ export const GallerySection = () => {
                 aria-label={`${photo.title} - பெரிதாக்க அழுத்தவும்`}
               >
               <div className="gallery-image-container">
-                <img src={photo.src} alt={photo.alt} className="gallery-thumbnail" loading="lazy" />
+                <img src={photo.src} alt={photo.alt} className="gallery-thumbnail" width={800} height={600} loading="lazy" decoding="async" />
                 <div className="gallery-item-hover-overlay">
                   <span className="gallery-zoom-badge">பெரிதாக்கு</span>
                   <p className="gallery-hover-title">{photo.title}</p>

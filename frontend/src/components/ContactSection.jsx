@@ -32,7 +32,7 @@ export const ContactSection = ({ onOpenEnquiry }) => {
           {/* Left — image + why choose us slides in from left */}
           <div className="contact-img-col scroll-reveal reveal-left" data-reveal-delay="0.1s">
             <div className="contact-img-wrap">
-              <img src={frontImg} alt="சமூகப் பணிமன்றம் திருமண மண்டபம் முகப்பு" className="contact-hall-img" loading="lazy" />
+              <img src={frontImg} alt="சமூகப் பணிமன்றம் திருமண மண்டபம் முகப்பு" className="contact-hall-img" width={800} height={600} loading="lazy" decoding="async" />
               <div className="contact-img-badge">
                 <KalasamIcon size={18} />
                 <span>ஞானஒளிவுபுரம், மதுரை</span>
@@ -71,7 +71,7 @@ export const ContactSection = ({ onOpenEnquiry }) => {
               <div className="contact-card-content">
                 <h3 className="contact-card-label">தொலைபேசி எண்</h3>
                 <p className="contact-card-value">
-                  <a  className="contact-link">+91 {phoneNumber}</a>
+                  <a href={`tel:+91${phoneNumber}`} className="contact-link">+91 {phoneNumber}</a>
                 </p>
                 <p className="contact-card-sub">நேரடியாக அழைக்கவும் — காலை 8 மணி முதல் இரவு 9 மணி வரை</p>
               </div>

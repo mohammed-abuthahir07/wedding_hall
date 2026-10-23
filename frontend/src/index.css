@@ -4,7 +4,7 @@
    ========================================================================== */
 
 :root {
-  /* Main Colors — Light Mode (Default) */
+  color-scheme: light;
   --bg-primary: #FFFFFF;
   --bg-secondary: #F8F9FA;
   --bg-tertiary: #FFF0F6;
@@ -54,41 +54,6 @@
   --line-height-tamil: 1.7;
 }
 
-/* Dark Mode Theme */
-[data-theme="dark"] {
-  --bg-primary: #121214;
-  --bg-secondary: #18181C;
-  --bg-tertiary: #251622;
-  --text-primary: #F8F9FA;
-  --text-secondary: #CED4DA;
-  --text-muted: #868E96;
-  --accent-pink: #FF6B99;
-  --accent-pink-hover: #E64980;
-  --accent-pink-active: #D6336C;
-  --accent-pink-subtle: #2E1524;
-  --accent-pink-border: #6B2144;
-  --accent-gold: #FBBF24;
-  --border-color: #2D2D36;
-  --border-subtle: #3A3A46;
-  --border-hover: #484858;
-  --card-bg: #1A1A20;
-  --card-hover-bg: #22222A;
-  --nav-bg: rgba(18, 18, 20, 0.94);
-  --dialog-bg: #1A1A20;
-  --overlay-bg: rgba(0, 0, 0, 0.85);
-  --input-bg: #22222A;
-  --input-border: #3A3A48;
-  --input-text: #F8F9FA;
-  --input-placeholder: #868E96;
-  --error-color: #FF8787;
-  --error-bg: #2C1618;
-
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 18px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.65);
-  --shadow-pink: 0 8px 24px rgba(255, 107, 153, 0.3);
-}
-
 /* ==========================================================================
    CSS Reset & Base Rules
    ========================================================================== */
@@ -109,7 +74,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition: background-color var(--transition-normal), color var(--transition-normal);
   overflow-x: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -150,9 +114,28 @@ body::-webkit-scrollbar {
 /* Focus styles for keyboard navigation accessibility */
 a:focus-visible,
 button:focus-visible,
-input:focus-visible {
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
   outline: 3px solid var(--accent-pink);
   outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -80px;
+  z-index: 4000;
+  padding: 10px 16px;
+  background-color: var(--accent-pink);
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 12px;
 }
 
 img {

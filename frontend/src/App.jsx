@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
@@ -9,29 +9,20 @@ import Footer from './components/Footer';
 import EnquiryPopup from './components/EnquiryPopup';
 import WhatsAppButton from './components/WhatsAppButton';
 import './App.css';
-import Manivizah  from '../src/components/Manivizah';
+import Manivizah from './components/Manivizah';
 import Guests from './components/Guests';
 
 export const App = () => {
-  const [theme, setTheme] = useState(() => {
-    try {
-      const saved = localStorage.getItem('smp_theme');
-      return saved === 'dark' ? 'dark' : 'light';
-    } catch {
-      return 'light';
-    }
-  });
-
-  // Popup state: automatically open on every fresh page load and reload
   const [isPopupOpen, setIsPopupOpen] = useState(true);
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    try { localStorage.setItem('smp_theme', theme); } catch { /* ignore */ }
-  }, [theme]);
-
-  const handleToggleTheme = useCallback(() => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+    document.documentElement.removeAttribute('data-theme');
+    document.documentElement.style.colorScheme = 'light';
+    try {
+      localStorage.removeItem('smp_theme');
+    } catch {
+      /* ignore */
+    }
   }, []);
 
   // ── Always start at the top on refresh (manual scroll restoration) ──
@@ -81,13 +72,11 @@ export const App = () => {
       }
     );
 
-    // Observe all scroll-reveal elements after paint
     let frameId = requestAnimationFrame(() => {
       const revealElements = document.querySelectorAll('.scroll-reveal');
       revealElements.forEach((el) => observer.observe(el));
     });
 
-    // Safety fallback: ensure no element stays permanently invisible if observer doesn't fire
     const safetyTimer = setTimeout(() => {
       document.querySelectorAll('.scroll-reveal:not(.revealed)').forEach((el) => {
         el.classList.add('revealed');
@@ -101,25 +90,27 @@ export const App = () => {
     };
   }, []);
 
+  const openEnquiry = () => setIsPopupOpen(true);
+
   return (
     <div className="app-container">
-      <Navbar
-        theme={theme}
-        onToggleTheme={handleToggleTheme}
-        onOpenEnquiry={() => setIsPopupOpen(true)}
-      />
+      <a href="#main-content" className="skip-link">
+        முக்கிய உள்ளடக்கத்திற்கு செல்ல
+      </a>
+
+      <Navbar onOpenEnquiry={openEnquiry} />
 
       <main id="main-content">
-        <HeroSection onOpenEnquiry={() => setIsPopupOpen(true)} />
+        <HeroSection onOpenEnquiry={openEnquiry} />
         <AboutSection />
         <FacilitiesSection />
-        <Manivizah/>
-        <GallerySection  />
-        <Guests/>
-        <ContactSection onOpenEnquiry={() => setIsPopupOpen(true)} />
+        <Manivizah />
+        <GallerySection />
+        <Guests />
+        <ContactSection onOpenEnquiry={openEnquiry} />
       </main>
 
-      <Footer onOpenEnquiry={() => setIsPopupOpen(true)} />
+      <Footer onOpenEnquiry={openEnquiry} />
 
       <EnquiryPopup
         isOpen={isPopupOpen}

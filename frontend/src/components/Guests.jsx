@@ -1,4 +1,3 @@
-
 import React from "react";
 import "./Guests.css";
 
@@ -24,11 +23,10 @@ const guestAreas = [
 
 const Guests = () => {
   return (
-    <main className="guests-page">
-      <section className="guests-section">
+    <section id="guests" className="guests-page" aria-label="விருந்தினர் வசதிகள்">
+      <div className="guests-section">
         <div className="guests-heading">
-        
-          <h1>விருந்தினர் வசதிகள்</h1>
+          <h2>விருந்தினர் வசதிகள்</h2>
           <p>
             விருந்தினர்களின் வசதியையும் மகிழ்ச்சியையும்
             கருத்தில் கொண்டு அமைக்கப்பட்ட இடங்கள்.
@@ -43,23 +41,26 @@ const Guests = () => {
                   src={area.image}
                   alt={area.alt}
                   className="guest-image"
+                  width={800}
+                  height={500}
                   loading="lazy"
+                  decoding="async"
                 />
 
-                <div className="guest-image-overlay">
-                  <h2>{area.title}</h2>
+                <div className="guest-image-overlay" aria-hidden="true">
+                  <p>{area.title}</p>
                 </div>
               </div>
 
               <div className="guest-card-content">
-                <h2>{area.title}</h2>
+                <h3>{area.title}</h3>
                 <p>{area.description}</p>
               </div>
             </article>
           ))}
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 };
 

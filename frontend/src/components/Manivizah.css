@@ -68,7 +68,7 @@
   transition: opacity 0.35s ease;
 }
 
-.mv-image-overlay h2 {
+.mv-image-overlay p {
   margin: 0;
   color: #fff;
   font-size: clamp(22px, 2.5vw, 32px);
@@ -89,7 +89,7 @@
   opacity: 1;
 }
 
-.mv-image-wrapper:hover .mv-image-overlay h2 {
+.mv-image-wrapper:hover .mv-image-overlay p {
   transform: translateY(0);
 }
 
@@ -125,7 +125,7 @@
   line-height: 1.8;
 }
 
-.mv-content-box h1 {
+.mv-content-box h2 {
   margin: 0 0 18px;
   color: var(--mv-text);
   font-size: clamp(25px, 2.5vw, 36px);
@@ -151,6 +151,7 @@
   }
 
   .mv-layout {
+    grid-template-columns: minmax(0, 1fr);
     gap: 22px;
   }
 
@@ -165,7 +166,7 @@
     font-size: 16px;
   }
 
-  .mv-content-box h1 {
+  .mv-content-box h2 {
     font-size: 26px;
     margin-bottom: 12px;
   }
@@ -202,7 +203,7 @@
     opacity: 1;
   }
 
-  .mv-image-overlay h2 {
+  .mv-image-overlay p {
     font-size: 25px;
   }
 
@@ -211,7 +212,7 @@
     border-radius: 14px;
   }
 
-  .mv-content-box h1 {
+  .mv-content-box h2 {
     font-size: 24px;
     line-height: 1.8;
     margin-bottom: 12px;
@@ -243,7 +244,7 @@
     padding: 18px 15px;
   }
 
-  .mv-content-box h1 {
+  .mv-content-box h2 {
     font-size: 22px;
   }
 
@@ -257,8 +258,12 @@
 @media (prefers-reduced-motion: reduce) {
   .mv-image,
   .mv-image-overlay,
-  .mv-image-overlay h2,
+  .mv-image-overlay p,
   .mv-content-box {
     transition: none;
+  }
+
+  .mv-image-wrapper:hover .mv-image {
+    transform: none;
   }
 }

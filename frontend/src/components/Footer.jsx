@@ -65,10 +65,6 @@ export const Footer = ({ onOpenEnquiry }) => {
           </p>
           <p className='footer-copyright1'>Powered By @Zayithtechnologies</p>
         </div>
-
-        <div>
-          
-        </div>
       </div>
     </footer>
   );

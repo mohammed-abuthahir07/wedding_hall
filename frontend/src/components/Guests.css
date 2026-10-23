@@ -48,7 +48,7 @@
   line-height: 1.8;
 }
 
-.guests-heading h1 {
+.guests-heading h2 {
   margin: 14px 0 10px;
   font-size: clamp(25px, 3vw, 34px);
   font-weight: 800;
@@ -127,7 +127,7 @@
   transition: opacity 0.3s ease;
 }
 
-.guest-image-overlay h2 {
+.guest-image-overlay p {
   margin: 0;
   color: #fff;
   font-size: clamp(18px, 2vw, 25px);
@@ -146,7 +146,7 @@
   padding: 22px 24px 25px;
 }
 
-.guest-card-content h2 {
+.guest-card-content h3 {
   margin: 0 0 10px;
   color: var(--guest-text);
   font-size: 22px;
@@ -172,7 +172,7 @@
     gap: 18px;
   }
 
-  .guests-heading h1 {
+  .guests-heading h2 {
     font-size: 24px;
     line-height: 1.8;
   }
@@ -185,7 +185,7 @@
     padding: 18px;
   }
 
-  .guest-card-content h2 {
+  .guest-card-content h3 {
     font-size: 20px;
   }
 
@@ -206,7 +206,7 @@
     margin-bottom: 23px;
   }
 
-  .guests-heading h1 {
+  .guests-heading h2 {
     font-size: 24px;
     line-height: 1.8;
   }
@@ -233,7 +233,7 @@
     padding: 18px 19px 21px;
   }
 
-  .guest-card-content h2 {
+  .guest-card-content h3 {
     margin-bottom: 8px;
     font-size: 20px;
     line-height: 1.8;
@@ -261,7 +261,7 @@
     padding: 16px;
   }
 
-  .guests-heading h1 {
+  .guests-heading h2 {
     font-size: 24px;
   }
 
@@ -269,7 +269,7 @@
     font-size: 15px;
   }
 
-  .guest-card-content h2 {
+  .guest-card-content h3 {
     font-size: 20px;
   }
 

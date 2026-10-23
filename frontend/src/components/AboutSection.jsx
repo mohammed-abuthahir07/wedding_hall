@@ -72,8 +72,8 @@ export const AboutSection = () => {
           {/* Right — images slide in from right */}
           <div className="about-image-col scroll-reveal reveal-right" data-reveal-delay="0.2s">
             <div className="about-img-stack">
-              <img src={hallImg} alt="சமூகப் பணிமன்றம் அரங்கு உட்புறம்" className="about-img-main" loading="lazy" />
-              <img src={stageImg} alt="திருமண மேடை அலங்காரம்" className="about-img-secondary" loading="lazy" />
+              <img src={hallImg} alt="சமூகப் பணிமன்றம் அரங்கு உட்புறம்" className="about-img-main" width={800} height={600} loading="lazy" decoding="async" />
+              <img src={stageImg} alt="திருமண மேடை அலங்காரம்" className="about-img-secondary" width={800} height={600} loading="lazy" decoding="async" />
               <div className="about-img-badge">
                 <span className="about-img-badge-num">50+</span>
                 <span className="about-img-badge-text">ஆண்டுகள்<br />பாரம்பரியம்</span>

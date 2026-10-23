@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { SunIcon, MoonIcon, MenuIcon, CloseIcon, KalasamIcon } from './Icons';
+import { MenuIcon, CloseIcon, KalasamIcon } from './Icons';
 
-export const Navbar = ({ theme, onToggleTheme, onOpenEnquiry }) => {
+export const Navbar = ({ onOpenEnquiry }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(() => (typeof window !== 'undefined' ? window.scrollY > 20 : false));
 
@@ -26,12 +26,15 @@ export const Navbar = ({ theme, onToggleTheme, onOpenEnquiry }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on Escape key
   useEffect(() => {
     if (!mobileMenuOpen) return;
     const onKey = (e) => { if (e.key === 'Escape') setMobileMenuOpen(false); };
     document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
   }, [mobileMenuOpen]);
 
   const navLinks = [
@@ -91,20 +94,6 @@ export const Navbar = ({ theme, onToggleTheme, onOpenEnquiry }) => {
 
         {/* ── Right-side action buttons ── */}
         <div className="navbar-actions">
-          {/* Theme Toggle */}
-          {/* <button
-            type="button"
-            className="theme-toggle-btn"
-            onClick={onToggleTheme}
-            aria-label={theme === 'dark' ? 'ஒளி முறைக்கு மாற்றவும்' : 'இருள் முறைக்கு மாற்றவும்'}
-            title={theme === 'dark' ? 'ஒளி முறைக்கு மாற்றவும்' : 'இருள் முறைக்கு மாற்றவும்'}
-          >
-            {theme === 'dark'
-              ? <SunIcon size={20} className="theme-icon sun-icon" />
-              : <MoonIcon size={20} className="theme-icon moon-icon" />
-            }
-          </button> */}
-
           {/* Enquiry Button — hidden on small screens, shown via drawer instead */}
           <button
             type="button"

@@ -370,54 +370,31 @@ async function main() {
   await cdp.evaluate(`window.scrollTo(0, 0)`);
   await delay(300);
 
-  // --- 3. THEME TOGGLE (LIGHT & DARK MODE) AUDIT ---
-  console.log('\n--- 3. Theme Toggle & Persistence Audit ---');
-  // Clear localStorage to test fresh user first visit default
-  await cdp.evaluate(`localStorage.clear()`);
+  // --- 3. THEME SWITCHER REMOVAL AUDIT ---
+  console.log('\n--- 3. Theme Switcher Removal Audit ---');
+  await cdp.evaluate(`localStorage.setItem('smp_theme', 'dark')`);
   await cdp.send('Page.reload');
   await delay(1000);
   await cdp.evaluate(`document.querySelector('.popup-close-btn')?.click()`);
   await delay(300);
 
-  const initialTheme = await cdp.evaluate(`document.documentElement.getAttribute('data-theme')`);
-  report(initialTheme === 'light', 'Default theme is Light Mode', `(got: "${initialTheme}")`);
+  const themeToggleCount = await cdp.evaluate(`document.querySelectorAll('.theme-toggle-btn').length`);
+  report(themeToggleCount === 0, 'Theme toggle control is removed from the interface');
 
-  // Click theme toggle button to switch to Dark Mode
-  await cdp.evaluate(`document.querySelector('.theme-toggle-btn').click()`);
-  await delay(300);
+  const dataTheme = await cdp.evaluate(`document.documentElement.getAttribute('data-theme')`);
+  report(!dataTheme, 'documentElement does not apply a leftover data-theme', `(got: "${dataTheme}")`);
 
-  const darkTheme = await cdp.evaluate(`document.documentElement.getAttribute('data-theme')`);
-  const bodyBgDark = await cdp.evaluate(`getComputedStyle(document.body).backgroundColor`);
-  report(darkTheme === 'dark', 'Theme switches to Dark Mode', `(data-theme: "${darkTheme}", bg: ${bodyBgDark})`);
-
-  // Verify theme persisted in localStorage
   const savedTheme = await cdp.evaluate(`localStorage.getItem('smp_theme')`);
-  report(savedTheme === 'dark', 'Dark theme preference persisted in localStorage', `("${savedTheme}")`);
+  report(savedTheme === null, 'Persisted smp_theme preference is cleared', `("${savedTheme}")`);
 
-  // Reload page and verify Dark theme is retained
-  await cdp.send('Page.reload');
-  await delay(1000);
-  const reloadedTheme = await cdp.evaluate(`document.documentElement.getAttribute('data-theme')`);
-  report(reloadedTheme === 'dark', 'Selected Dark theme survives full page refresh', `(reloaded data-theme: "${reloadedTheme}")`);
-
-  // Dismiss popup
-  await cdp.evaluate(`document.querySelector('.popup-close-btn')?.click()`);
-  await delay(300);
-
-  // Switch back to Light Mode
-  await cdp.evaluate(`document.querySelector('.theme-toggle-btn').click()`);
-  await delay(300);
-  const switchedBackTheme = await cdp.evaluate(`document.documentElement.getAttribute('data-theme')`);
-  report(switchedBackTheme === 'light', 'Theme toggles back to Light Mode cleanly', `("${switchedBackTheme}")`);
+  const bodyBg = await cdp.evaluate(`getComputedStyle(document.body).backgroundColor`);
+  report(bodyBg === 'rgb(255, 255, 255)', 'Site keeps the intended light background', `(${bodyBg})`);
 
   // --- 4. HERO SECTION & CONTENT INTEGRITY AUDIT ---
   console.log('\n--- 4. Hero Section & Content Integrity Audit ---');
   // Verify full background image on hero section
-  const heroBgStyle = await cdp.evaluate(`(() => {
-    const el = document.querySelector('.hero-full-bg-section');
-    return el ? getComputedStyle(el).backgroundImage : '';
-  })()`);
-  report(heroBgStyle.includes('background'), 'Hero section uses full-background hall photograph', `(${heroBgStyle.substring(0, 48)}...)`);
+  const heroBgSrc = await cdp.evaluate(`document.querySelector('.hero-bg-img')?.currentSrc || document.querySelector('.hero-bg-img')?.src || ''`);
+  report(Boolean(heroBgSrc), 'Hero section uses full-background hall photograph', `(${heroBgSrc.substring(0, 80)}...)`);
 
   // Verify dark overlay exists
   const hasDarkOverlay = await cdp.evaluate(`Boolean(document.querySelector('.hero-dark-overlay'))`);
