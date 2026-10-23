@@ -36,7 +36,7 @@ export const HeroSection = ({ onOpenEnquiry }) => {
 
         {/* Existing Subtitle */}
         <p className="hero-organizer-line hero-reveal-item delay-4">
-          ஞானஒளிவுபுரம் சமூக சேவை சங்கத்தால் நடத்தப்படுகிறது
+          ஞானஒளிவுபுரம் சமூக சேவா சங்கத்தால் நடத்தப்படுகிறது
         </p>
 
         <p className="hero-organization hero-reveal-item delay-4">
