@@ -5,7 +5,13 @@ export const Footer = ({ onOpenEnquiry }) => {
   const handleLinkClick = (e, href) => {
     e.preventDefault();
     const target = document.querySelector(href);
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+      if (target.classList.contains('scroll-reveal')) {
+        target.classList.add('revealed');
+      }
+      target.querySelectorAll('.scroll-reveal:not(.revealed)').forEach((el) => el.classList.add('revealed'));
+    }
   };
 
   return (

@@ -370,6 +370,62 @@ async function main() {
   await cdp.evaluate(`window.scrollTo(0, 0)`);
   await delay(300);
 
+  // --- 2D. MOBILE NAVBAR REOPEN AND NAVIGATION STABILITY AUDIT ---
+  console.log('\n--- 2D. Mobile Navbar Reopen and Navigation Stability Audit ---');
+  await cdp.send('Emulation.setDeviceMetricsOverride', {
+    width: 390,
+    height: 844,
+    deviceScaleFactor: 1,
+    mobile: true
+  });
+  await delay(200);
+
+  // Open mobile menu
+  await cdp.evaluate(`document.querySelector('.mobile-menu-btn')?.click()`);
+  await delay(300);
+  const mobileMenuOpenInitially = await cdp.evaluate(`Boolean(document.querySelector('.mobile-nav-open'))`);
+  report(mobileMenuOpenInitially, 'Mobile navigation menu opens on hamburger click');
+
+  // Click a navigation item to move to another section (facilities)
+  await cdp.evaluate(`(() => {
+    const link = document.querySelector('.mobile-nav-link[href="#facilities"]');
+    link?.click();
+  })()`);
+  await delay(800);
+
+  const postNavStatus = await cdp.evaluate(`(() => {
+    const el = document.querySelector('.navbar-header');
+    const r = el?.getBoundingClientRect();
+    return {
+      scrollY: window.scrollY,
+      navTop: r?.top,
+      isMenuClosed: !document.querySelector('.mobile-nav-open')
+    };
+  })()`);
+  report(postNavStatus.scrollY > 200 && postNavStatus.isMenuClosed, 'Navigating via mobile link scrolls to section and closes menu');
+
+  // Click hamburger icon AGAIN at this scroll position (The user reported bug)
+  await cdp.evaluate(`document.querySelector('.mobile-menu-btn')?.click()`);
+  await delay(300);
+
+  const reopenStatus = await cdp.evaluate(`(() => {
+    const el = document.querySelector('.navbar-header');
+    const r = el?.getBoundingClientRect();
+    return {
+      scrollY: window.scrollY,
+      navTop: r?.top,
+      isMenuOpen: Boolean(document.querySelector('.mobile-nav-open')),
+      inViewport: r && r.top === 0 && r.height > 0
+    };
+  })()`);
+  report(reopenStatus.inViewport && reopenStatus.isMenuOpen, 'Navbar remains visible at top:0 without disappearing or jumping when reopening menu');
+
+  // Close menu and reset viewport
+  await cdp.evaluate(`document.querySelector('.mobile-menu-btn')?.click()`);
+  await delay(200);
+  await cdp.send('Emulation.clearDeviceMetricsOverride');
+  await delay(200);
+
   // --- 3. THEME SWITCHER REMOVAL AUDIT ---
   console.log('\n--- 3. Theme Switcher Removal Audit ---');
   await cdp.evaluate(`localStorage.setItem('smp_theme', 'dark')`);

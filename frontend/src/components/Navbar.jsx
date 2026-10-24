@@ -30,10 +30,8 @@ export const Navbar = ({ onOpenEnquiry }) => {
     if (!mobileMenuOpen) return;
     const onKey = (e) => { if (e.key === 'Escape') setMobileMenuOpen(false); };
     document.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden';
     return () => {
       document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
     };
   }, [mobileMenuOpen]);
 
@@ -49,7 +47,14 @@ export const Navbar = ({ onOpenEnquiry }) => {
     e.preventDefault();
     setMobileMenuOpen(false);
     const target = document.querySelector(href);
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+      if (target.classList.contains('scroll-reveal')) {
+        target.classList.add('revealed');
+      }
+      const unrevealed = target.querySelectorAll('.scroll-reveal:not(.revealed)');
+      unrevealed.forEach((el) => el.classList.add('revealed'));
+    }
   };
 
   return (

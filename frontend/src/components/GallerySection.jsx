@@ -6,6 +6,9 @@ import heroBg from '../assets/background.jpeg';
 import img2 from '../assets/img2.jpeg';
 import img5 from '../assets/img12.webp';
 import img9 from '../assets/img9.jpeg';
+import img14 from '../assets/img14.webp';
+import img15 from '../assets/img15.webp';
+import img17 from '../assets/img17.webp';
 import img18 from '../assets/img18.webp';
 import img19 from '../assets/img19.webp';
 
@@ -16,10 +19,13 @@ export const GallerySection = () => {
   const galleryImages = [
     { src: heroBg, title: 'திருமண மண்டப முகப்பு தோற்றம்', alt: 'சமூகப் பணிமன்றம் திருமண மண்டபம் முகப்பு தோற்றம்' },
     { src: img2, title: 'மண்டப உட்புற அரங்கு மற்றும் மேடை தோற்றம்', alt: 'சமூகப் பணிமன்றம் மணமேடை மற்றும் அரங்கு' },
-    { src: img19, title: '250 பேர் அமரக்கூடிய விசாலமான இருக்கைகள்', alt: 'சமூகப் பணிமன்றம் இருக்கை அமைப்பு' },
+    { src: img19, title: '200 பேர் அமரக்கூடிய விசாலமான இருக்கைகள்', alt: 'சமூகப் பணிமன்றம் இருக்கை அமைப்பு' },
     { src: img5, title: 'குளிரூட்டப்பட்ட திருமண அரங்கம்', alt: 'குளிர்சாதன திருமண அரங்கு தோற்றம்' },
     { src: img18, title: 'அலங்கரிக்கப்பட்ட திருமண மேடை', alt: 'சுபநிகழ்ச்சிகளுக்கான திருமண மேடை அமைப்பு' },
     { src: img9, title: 'உணவு அருந்துவதற்கான தனி உணவுக்கூடம்', alt: 'சமூகப் பணிமன்றம் சாப்பாட்டுக் கூடம்' },
+    { src: img15, title: 'மணமக்கள் மேடை அலங்கார தோற்றம்', alt: 'சமூகப் பணிமன்றம் மணமக்கள் மேடை அலங்காரம்' },
+    { src: img17, title: 'குளிர்சாதன மண்டப விசால பார்வை', alt: 'சமூகப் பணிமன்றம் குளிர்சாதன மண்டப விசால பார்வை' },
+    { src: img14, title: 'சாப்பாட்டுக் கூடம் பந்தி இருக்கை வசதி', alt: 'சமூகப் பணிமன்றம் சாப்பாட்டுக் கூடம் பந்தி இருக்கை வசதி' },
   ];
 
   const handleOpenLightbox = (index) => {

@@ -75,7 +75,7 @@ export const HeroSection = ({ onOpenEnquiry }) => {
               <SeatingIcon size={24} className="feature-panel-svg" />
             </div>
             <div className="feature-panel-text-wrap">
-              <span className="feature-panel-title">250 பேர் அமரக்கூடிய அரங்கு</span>
+              <span className="feature-panel-title">200 பேர் அமரக்கூடிய அரங்கு</span>
               <span className="feature-panel-sub">குளிரூட்டப்பட்ட விசாலமான இருக்கை</span>
             </div>
           </div>
