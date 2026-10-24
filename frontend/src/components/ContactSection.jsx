@@ -153,7 +153,7 @@ export const ContactSection = ({ onOpenEnquiry }) => {
               <KalasamIcon size={16} />
               <span>விளக்கங்கள்</span>
             </span>
-            <h3 className="section-title">அடிக்கடி கேட்கப்படும் கேள்விகள் (FAQ)</h3>
+            <h3 className="section-title">அடிக்கடி கேட்கப்படும் கேள்விகள்</h3>
             <div className="section-title-divider"></div>
             <p className="section-description">
               மண்டப முன்பதிவு மற்றும் வசதிகள் குறித்து வாடிக்கையாளர்கள் பொதுவாக கேட்கும் கேள்விகளுக்கான தெளிவான பதில்கள்
