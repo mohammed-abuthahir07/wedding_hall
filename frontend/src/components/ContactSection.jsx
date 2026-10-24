@@ -71,12 +71,12 @@ export const ContactSection = ({ onOpenEnquiry }) => {
               <div className="contact-card-content">
                 <h3 className="contact-card-label">தொலைபேசி எண்</h3>
                 <p className="contact-card-value">
-                  <a href={`tel:${phoneNumber}`} className="contact-link">+91 {phoneNumber}</a>
+               <span className="contact-link">
+                +91 {phoneNumber}
+              </span>
                 </p>
                 <p className="contact-card-sub">நேரடியாக அழைக்கவும் — காலை 8 மணி முதல் இரவு 9 மணி வரை</p>
-                <a href={`tel:${phoneNumber}`} className="contact-card-action-btn phone-action-btn" aria-label="தொலைபேசியில் அழைக்கவும்">
-                  இப்போதே அழைக்க
-                </a>
+                
               </div>
             </div>
 
