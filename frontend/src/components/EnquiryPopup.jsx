@@ -273,7 +273,7 @@ const handleSubmit = (e) => {
                 min="1"
                 step="1"
                 className={`form-input ${errors.guests ? 'input-error' : ''}`}
-                placeholder="எ.கா: 200"
+                placeholder="எ.கா: 250"
                 value={formData.guests}
                 onChange={handleChange}
                 aria-required="true"
