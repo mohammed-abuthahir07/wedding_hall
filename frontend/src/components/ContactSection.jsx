@@ -103,7 +103,7 @@ export const ContactSection = ({ onOpenEnquiry }) => {
                 <MapPinIcon size={28} className="contact-svg-icon" />
               </div>
               <div className="contact-card-content">
-                <h3 className="contact-card-label"> சமூக சேவை சங்கம்</h3>
+                <h3 className="contact-card-label"> சமூக சேவா சங்கம்</h3>
                 <p className="contact-card-value location-text">ஞானஒளிவுபுரம், மதுரை</p>
                 <p className="contact-card-sub">நிர்வாகம்: ஞானஒளிவுபுரம் சங்கம்</p>
                 <button type="button" className="contact-card-action-btn enquiry-action-btn" onClick={onOpenEnquiry} aria-label="முன்பதிவு படிவத்தை திறக்கவும்">
