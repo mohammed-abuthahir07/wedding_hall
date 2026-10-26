@@ -22,7 +22,7 @@ export const ContactSection = ({ onOpenEnquiry }) => {
           <h2 className="section-title">தொடர்புக்கு</h2>
           <div className="section-title-divider"></div>
           <p className="section-description">
-            உங்கள் சுபநிகழ்ச்சிக்கான மண்டப முன்பதிவு மற்றும் மேலதிக விவரங்களுக்கு
+            உங்கள் சுபநிகழ்ச்சிக்கான மண்டப முன்பதிவு மற்றும் கூடுதல் விவரங்களுக்கு
             எங்களை தொடர்பு கொள்ளவும் — நாங்கள் உதவ எப்போதும் தயாராக இருக்கிறோம்
           </p>
         </div>
